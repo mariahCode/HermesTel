@@ -19,15 +19,15 @@ public class Manager {
 
 
 
-		public String Technician(String firstName, String lastName, String gender, String title, int grade,
-				double salary, double bonus) {
-			return Technician;
-			
-		}
+//		public String Technician(String firstName, String lastName, String gender, String title, int grade,
+//				double salary, double bonus) {
+//			return Technician;
+//			
+//		}
 
 		
 	
-	employeeList.add(new Employee());
+//	employeeList.add(new Employee());
 
 	
 }

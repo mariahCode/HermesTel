@@ -16,7 +16,8 @@ abstract public class Employee {
 	private double salary = 50000.00; 
 	private double bonus = 5000.00;
 
-	public ArrayList<Employee> employeeList;
+	// TODO should be private?
+	public ArrayList<Employee> employeeList = new ArrayList<>();
 
 	// Getters and setters. 
 	public String getEmpID() {
@@ -96,11 +97,11 @@ abstract public class Employee {
 //	}
 //
 
-	public void updateEmployee(String empID) {
-		// Ask for new values for all the attributes. like first name aso. 
-		Employee employeeToUpdate = getEmployee(empID);
-		
-	}
+//	public void updateEmployee(String empID) {
+//		// Ask for new values for all the attributes. like first name aso. 
+//		Employee employeeToUpdate = getEmployee(empID);
+//		
+//	}
 
 	abstract public void updateEmployee();
 	//Employee employeeToUpdate, String firstName, String lastName, String gender, String title, int grade, double salary, double bonus) {
@@ -111,13 +112,13 @@ abstract public class Employee {
 
 	
 
-	public Employee getEmployee(String empID) {
-		
-		Employee employee = new Employee();
-		// Loop through the array of all employees, regardless of type. 
-		// Where ID is the same. Get that instance. 
-		return employee; 
-	}
+//	public Employee getEmployee(String empID) {
+//		
+//		Employee employee = new Employee();
+//		// Loop through the array of all employees, regardless of type. 
+//		// Where ID is the same. Get that instance. 
+//		return employee; 
+//	}
 	
 
 
