@@ -11,7 +11,8 @@ public class Statistics {
 //		
 //		return x; 
 //	}
-//	public double averageSalaryPerProfession() {
+
+	//	public double averageSalaryPerProfession() {
 //		
 //	}
 //	

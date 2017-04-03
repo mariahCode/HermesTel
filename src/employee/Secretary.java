@@ -1,5 +1,7 @@
 package employee;
 
+import javax.swing.JOptionPane;
+
 public class Secretary extends Employee {
 
 	// Member variables. 
@@ -18,8 +20,19 @@ public class Secretary extends Employee {
 	// Methods. 
 	// TODO Add specific method. 
 	@Override
-	public void updateEmployee() {
-		// TODO Add code here
+	public void updateEmployee(Employee employee) {
+
+		Secretary secretary = (Secretary)employee;
+		
+		// Ask for the new values. 
+		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + secretary.getEmpID() + "!");	
+		secretary.setFirstName(s); 
+		echo(s);
+
+	}
+
+    public void echo(String s) {
+    	System.out.println(s);
 	}
 
 	

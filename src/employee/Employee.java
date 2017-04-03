@@ -17,7 +17,7 @@ abstract public class Employee {
 	private double bonus = 5000.00;
 
 	// TODO should be private?
-	public ArrayList<Employee> employeeList = new ArrayList<>();
+	static public ArrayList<Employee> employeeList = new ArrayList<>();
 
 	// Getters and setters. 
 	public String getEmpID() {
@@ -86,9 +86,6 @@ abstract public class Employee {
 		this.grade = grade;
 		this.salary = salary;
 		this.bonus = bonus;
-//		employeeList = new ArrayList<Employee>();
-//		employeeList.add(new OpenAccount());
-
 	}
 	
 	// Methods. 
@@ -96,14 +93,45 @@ abstract public class Employee {
 //		
 //	}
 //
+	
+	
+	
+	
+	public void removeEmployee(String empID) {
+		
+		for (Employee employee : employeeList) {
+			if (employee.empID.equals(empID)) {				
+				employeeList.remove(employee); 
+				// TODO Info message: This employee was removed. 
+				break; 				
+				}
+		}
+	}
 
-//	public void updateEmployee(String empID) {
-//		// Ask for new values for all the attributes. like first name aso. 
-//		Employee employeeToUpdate = getEmployee(empID);
-//		
-//	}
+	public void updateEmployee(String empID) {
+		updateEmployee(getEmployeeByID(empID));		
+	}
 
-	abstract public void updateEmployee();
+	abstract public void updateEmployee(Employee employee);
+
+	public double averageSalary() {
+		
+		echo (empID);
+
+		double totalSalary = 0.00; 
+		for (Employee employee : employeeList) {
+			echo ("totalSalary: " + totalSalary);
+			totalSalary += employee.getSalary(); 			
+		}
+		return divide(totalSalary, employeeList.size());
+	}
+	
+	
+	public double divide(double num, int denom) {
+        return ((double) num) / ((double) denom);
+    }
+
+	
 	//Employee employeeToUpdate, String firstName, String lastName, String gender, String title, int grade, double salary, double bonus) {
 	
 	//	employeeToUpdate.setBonus(20.00);
@@ -112,15 +140,22 @@ abstract public class Employee {
 
 	
 
-//	public Employee getEmployee(String empID) {
-//		
-//		Employee employee = new Employee();
-//		// Loop through the array of all employees, regardless of type. 
-//		// Where ID is the same. Get that instance. 
-//		return employee; 
-//	}
+	public Employee getEmployeeByID(String empID) {
+		
+		
+		for (Employee employee : employeeList) {
+			if (employee.empID.equals(empID)) {
+				return employee; 
+			}
+		}
+		return null; 
+
+		// Loop through the array of all employees, regardless of type. 
+		// Where ID is the same. Get that instance. 
+	}
 	
 
+	
 
 	//	public void removeEmployee() {
 //		
@@ -129,6 +164,9 @@ abstract public class Employee {
 //	public calculateSalary()
 //	calculateBonus()
 	
-	
+    public void echo(String s) {
+    	System.out.println(s);
+	}
+
 	
 }
