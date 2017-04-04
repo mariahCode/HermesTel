@@ -24,7 +24,7 @@ public class Technician extends Employee {
 		Technician technician = (Technician)employee;
 		
 		// Ask for the new values. 
-		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + technician.getEmpID() + "!");	
+		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + technician.getEmpID() +  "!");	
 		Utility.echo(s);
 		technician.setFirstName(s); 
 

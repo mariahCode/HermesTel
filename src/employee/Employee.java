@@ -12,7 +12,8 @@ abstract public class Employee {
 	private String lastName;
 	private String gender; // TODO enum
 	private String title; // TODO enum
-	private String departement; // TODO enum (REPresentative. HeadOfSection.
+	private String departement; 
+	private static String typeOfEmployee ="" ;// TODO enum (REPresentative. HeadOfSection.
 								// HOOffice)
 	private int grade; // TODO enum (1, 2, 3)
 
@@ -114,12 +115,27 @@ abstract public class Employee {
 	//
 
 	static public void removeEmployee(String empID) {
-
+		
 		for (Employee employee : employeeList) {
+			
 			if (employee.empID.equals(empID)) {
+			if (employee instanceof Technician){
+				typeOfEmployee = "Technician";
+			}
+			else if (employee instanceof Sales){
+				
+				typeOfEmployee = "Sales";
+			}
+				else if (employee instanceof Secretary){
+					
+					typeOfEmployee = "Secretary";
+			}
 				employeeList.remove(employee);
+				
 				// TODO Info message: This employee was removed.
-				System.out.println("The Employee" + employee.getFirstName()+" " + "Was Quit from" + employee.departement);
+				System.out.println("The Employee" + "/ " + employee.getFirstName() + employee.getLastName() + "/ "
+						+ employee.getGender() + "/ " + employee.getGrade() + "/ " + employee.getSalary() + "/ "
+						+ employee.getBonus()+"/ "+ typeOfEmployee );
 				break;
 			}
 		}
@@ -129,9 +145,22 @@ abstract public class Employee {
 		updateEmployee(getEmployeeByID(empID));
 		for (Employee employee : employeeList) {
 			if (employee.empID.equals(empID)) {
-				
+				if (employee instanceof Technician){
+					typeOfEmployee = "Technician";
+				}
+				else if (employee instanceof Sales){
+					
+					typeOfEmployee = "Sales";
+				}
+					else if (employee instanceof Secretary){
+						
+						typeOfEmployee = "Secretary";
+				}
+
 				// TODO Info message: This employee was removed.
-				System.out.println("The Employee" + employee.getFirstName()+" " + "Was moving to ");
+				System.out.println("The Employee" + "/ " + employee.getFirstName() + employee.getLastName() + "/ "
+						+ employee.getGender() + "/ " + employee.getGrade() + "/ " + employee.getSalary() + "/ "
+						+ employee.getBonus());
 				break;
 			}
 		}
