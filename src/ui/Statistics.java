@@ -25,6 +25,17 @@ public class Statistics {
 		return Utility.divide(totalSalary, Employee.employeeList.size());
 	}
 
+	// ugly version
+//	static public void averageSalaryPerProfession() {
+//		for (Employee employee : Employee.employeeList) {
+//			employee.calculateTotalSalaryPerProfession(employee);
+//		}
+//		Sales.calculateAverageSalaryPerProfession();
+//		Secretary.calculateAverageSalaryPerProfession();
+//		Technician.calculateAverageSalaryPerProfession(); 
+//	}
+
+	// bita: use instanceof in this case!
 	static public void averageSalaryPerProfession() {
 		for (Employee employee : Employee.employeeList) {
 			employee.calculateTotalSalaryPerProfession(employee);
@@ -33,7 +44,7 @@ public class Statistics {
 		Secretary.calculateAverageSalaryPerProfession();
 		Technician.calculateAverageSalaryPerProfession(); 
 	}
-
+	
 	// Polymorphism example. 
 	static public String calculateBonusWithPolymorphism() {
 		
