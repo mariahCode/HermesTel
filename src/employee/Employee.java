@@ -2,6 +2,8 @@ package employee;
 
 import java.util.ArrayList;
 
+import utilities.Utility;
+
 abstract public class Employee {
 
 	// Member variables.
@@ -16,6 +18,8 @@ abstract public class Employee {
 
 	private double salary = 50000.00;
 	private double bonus = 5000.00;
+	
+	private Utility util = new Utility();
 
 	// TODO should be private?
 	static public ArrayList<Employee> employeeList = new ArrayList<>();
@@ -135,21 +139,18 @@ abstract public class Employee {
 
 	abstract public void updateEmployee(Employee employee);
 
-	public double averageSalary() {
-
-		echo(empID);
-
-		double totalSalary = 0.00;
-		for (Employee employee : employeeList) {
-			echo("totalSalary: " + totalSalary);
-			totalSalary += employee.getSalary();
-		}
-		return divide(totalSalary, employeeList.size());
-	}
-
-	public double divide(double num, int denom) {
-		return ((double) num) / ((double) denom);
-	}
+	// Trying to move this
+//	public double averageSalary() {
+//
+//		echo(empID);
+//
+//		double totalSalary = 0.00;
+//		for (Employee employee : employeeList) {
+//			echo("totalSalary: " + totalSalary);
+//			totalSalary += employee.getSalary();
+//		}
+//		return divide(totalSalary, employeeList.size());
+//	}
 
 	// Employee employeeToUpdate, String firstName, String lastName, String
 	// gender, String title, int grade, double salary, double bonus) {
@@ -177,10 +178,6 @@ abstract public class Employee {
 	//
 	// public calculateSalary()
 	// calculateBonus()
-
-	public void echo(String s) {
-		System.out.println(s);
-	}
 
 	public String getDepartement() {
 		return departement;

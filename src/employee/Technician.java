@@ -2,6 +2,8 @@ package employee;
 
 import javax.swing.JOptionPane;
 
+import utilities.Utility;
+
 public class Technician extends Employee {
 
 	// Member variables. 
@@ -23,7 +25,7 @@ public class Technician extends Employee {
 		
 		// Ask for the new values. 
 		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + technician.getEmpID() + "!");	
-		echo(s);
+		Utility.echo(s);
 		technician.setFirstName(s); 
 
 		
@@ -40,10 +42,6 @@ public class Technician extends Employee {
 
 	// Methods. 
 	// TODO Add specific method. 
-	
-    public void echo(String s) {
-    	System.out.println(s);
-	}
 
 
 }
