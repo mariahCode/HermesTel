@@ -139,6 +139,11 @@ abstract public class Employee {
 
 	abstract public void updateEmployee(Employee employee);
 
+	// maria test
+	abstract public String mariaTest(Employee employee);
+
+	abstract public double calculateBonus(Employee employee);
+
 	// Trying to move this
 //	public double averageSalary() {
 //

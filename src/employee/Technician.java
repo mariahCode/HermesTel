@@ -43,5 +43,24 @@ public class Technician extends Employee {
 	// Methods. 
 	// TODO Add specific method. 
 
+	@Override
+	public String mariaTest(Employee employee) {
+
+		Technician technician = (Technician)employee;
+		
+		Utility.echo("Technician");
+		return ""; 
+
+	}
+
+	@Override
+	public double calculateBonus(Employee employee) {
+
+		Technician technician = (Technician)employee;
+		
+		Utility.echo("Technician");
+		return 3000.00; 
+
+	}
 
 }

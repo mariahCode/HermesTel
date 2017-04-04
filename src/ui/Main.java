@@ -43,8 +43,11 @@ public class Main {
 
 		// TODO move to Statistics class
 //		Statistics statistics = new Statistics();
-		Utility.echo(Statistics.averageSalary() + "");
+//		Utility.echo(Statistics.averageSalary() + "");
 
+		Statistics.calculateBonusWithPolymorphism();
+		
+		
 	}
 
 }

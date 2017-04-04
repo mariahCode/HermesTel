@@ -33,4 +33,24 @@ public class Secretary extends Employee {
 
 	}
 
+	@Override
+	public String mariaTest(Employee employee) {
+
+		Secretary secretary = (Secretary)employee;
+		
+		Utility.echo("Secretary");
+		return ""; 
+
+	}
+	
+	@Override
+	public double calculateBonus(Employee employee) {
+
+		Secretary secretary = (Secretary)employee;
+		
+		Utility.echo("Secretary");
+		return 2000.00; 
+
+	}
+
 }

@@ -23,10 +23,30 @@ public class Statistics {
 		return Utility.divide(totalSalary, Employee.employeeList.size());
 	}
 
-	//	public double averageSalaryPerProfession() {
-//		
-//	}
-//	
+	static public String averageSalaryPerProfession() {
+		
+		String maria = "";
+		for (Employee employee : Employee.employeeList) {
+			// maria = employee.mariaTest(employee);
+			maria = "" + employee.calculateBonus(employee);
+			Utility.echo(maria);
+		}
+		return maria;
+	}
+
+	static public String calculateBonusWithPolymorphism() {
+		
+		String maria = "";
+		for (Employee employee : Employee.employeeList) {
+			// maria = employee.mariaTest(employee);
+			maria = "" + employee.calculateBonus(employee);
+			Utility.echo(maria);
+		}
+		return maria;
+	}
+
+	
+	//	
 //	public double averageGenderOverall() {
 //		
 //	}

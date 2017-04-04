@@ -33,4 +33,20 @@ public class Sales extends Employee {
 
 	}
 
+	@Override
+	public String mariaTest(Employee employee) {
+
+		Sales sales = (Sales)employee;
+		Utility.echo("Sales");
+		return ""; 
+
+	}
+	
+	@Override
+	public double calculateBonus(Employee employee) {
+
+		Sales sales = (Sales)employee;
+		Utility.echo("Sales");
+		return 1000.00; 
+	}	
 }
