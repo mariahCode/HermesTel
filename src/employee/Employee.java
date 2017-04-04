@@ -19,8 +19,6 @@ abstract public class Employee {
 	private double salary = 50000.00;
 	private double bonus = 5000.00;
 	
-	private Utility util = new Utility();
-
 	// TODO should be private?
 	static public ArrayList<Employee> employeeList = new ArrayList<>();
 
@@ -142,8 +140,12 @@ abstract public class Employee {
 	// maria test
 	abstract public String mariaTest(Employee employee);
 
+	// Polymorphism example. 
 	abstract public double calculateBonus(Employee employee);
 
+	abstract public void calculateTotalSalaryPerProfession(Employee employee);
+//	abstract public void calculateAverageSalaryPerProfession();	
+	
 	// Trying to move this
 //	public double averageSalary() {
 //

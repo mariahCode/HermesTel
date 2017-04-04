@@ -9,12 +9,18 @@ public class Sales extends Employee {
 	// Member variables. 
 //	private String empID; // TODO enum? ex of values: dev site, sales office, customer/call/admin center
 
+	// Class variables. 
+	static public double averageSalaryForSales; // Make private 
+	public static int nSales = 0;
+
 	// Constructor. 
 	public Sales(String firstName, String lastName, String gender, String title, int grade,
 			double salary, double bonus) {
 		
 		super("SAL_", firstName, lastName, gender, title, grade, salary, bonus);
-		
+
+		nSales++; 
+
 		employeeList.add(this);
 
 	}
@@ -49,4 +55,23 @@ public class Sales extends Employee {
 		Utility.echo("Sales");
 		return 1000.00; 
 	}	
+	
+	@Override
+	public void calculateTotalSalaryPerProfession(Employee employee) {
+
+		averageSalaryForSales += employee.getSalary(); 
+		Utility.echo("Sale: " + employee.getSalary());
+	}	
+		
+//	@Override
+	public static void calculateAverageSalaryPerProfession() {
+
+		Utility.echo("" + averageSalaryForSales);
+		Utility.echo("" + nSales);
+
+		Utility.echo("averageSalaryForSales: " + Utility.divide(averageSalaryForSales, nSales));
+				
+	}	
+	
+	
 }

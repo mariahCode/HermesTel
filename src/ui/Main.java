@@ -18,6 +18,7 @@ public class Main {
 		Technician e2 = new Technician("Maria", "LastName", "Female", "HOS", 2, 20000.00, 1000.00);
 		Sales e3 = new Sales("Mothana", "Aboush", "Male", "HOD", 3, 10000.00, 10000.00);
 		Secretary e4 = new Secretary("Mera", "Alxander", "Female", "REP", 1, 20000.00, 1000.00);
+		Sales e5 = new Sales("Mothana", "Aboush", "Male", "HOD", 3, 20000.00, 10000.00);
 
 //		System.out.println(e1.getEmpID() + "/ " + e1.getFirstName() + e1.getLastName() + "/ " + e1.getGender() + " /"
 //				+ e1.getTitle() + e1.getGrade() + "/ " + e1.getSalary() + "/ " + e1.getBonus());
@@ -41,13 +42,13 @@ public class Main {
 //		Employee.removeEmployee(e2.getEmpID());
 //		System.out.println(e2.getEmployeeByID(e2.getEmpID()) + " " + e2.getFirstName());
 
-		// TODO move to Statistics class
-//		Statistics statistics = new Statistics();
 //		Utility.echo(Statistics.averageSalary() + "");
 
-		Statistics.calculateBonusWithPolymorphism();
-		
-		
+		// Polymorphism example. 
+//		Statistics.calculateBonusWithPolymorphism();
+
+		Statistics.averageSalaryPerProfession(); 
+				
 	}
 
 }
