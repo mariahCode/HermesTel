@@ -18,6 +18,7 @@ public class Main {
 		Technician e2 = new Technician("Maria", "LastName", "Female", "HOS", 2, 20000.00, 1000.00);
 		Sales e3 = new Sales("Almothana", "Aboush", "Male", "HOD", 3, 10000.00, 10000.00);
 		Secretary e4 = new Secretary("Mera", "Alxander", "Female", "REP", 1, 20000.00, 1000.00);
+		Sales e5 = new Sales("Mothana", "Aboush", "Male", "HOD", 3, 20000.00, 10000.00);
 
 		System.out.println(e1.getEmpID() + "/ " + e1.getFirstName() + e1.getLastName() + "/ " + e1.getGender() + " /"
 				+ e1.getTitle() + e1.getGrade() + "/ " + e1.getSalary() + "/ " + e1.getBonus());
@@ -45,19 +46,16 @@ public class Main {
 		System.out.println(e2.getEmpID() + " " + e2.getFirstName() + e2.getLastName() + " " + e2.getGender() + " "
 				+ e2.getTitle() + e2.getGrade() + " " + e2.getSalary() + " " + e2.getBonus());
 
-		// TODO move to Statistics class
-		Statistics statistics = new Statistics();
-		Utility.echo(Statistics.averageSalary() + "");
 
-		
-		System.out.println(e1.getEmpID() + "/ " + e1.getFirstName() + e1.getLastName() + "/ " + e1.getGender() + " /"
-				+ e1.getTitle() + e1.getGrade() + "/ " + e1.getSalary() + "/ " + e1.getBonus());
-		System.out.println(e2.getEmpID() + "/ "  + e2.getFirstName() + e2.getLastName() + "/ "  + e2.getGender() + "/ " 
-				+ e2.getTitle() + e2.getGrade() + "/ " + e2.getSalary() + "/ "  + e2.getBonus());
-		System.out.println(e3.getEmpID() + "/ "  + e3.getFirstName() + e3.getLastName() + "/ "  + e3.getGender() + "/ " 
-				+ e3.getTitle() + e3.getGrade() + "/ "  + e3.getSalary() + "/ "  + e3.getBonus());
-		System.out.println(e4.getEmpID() + "/ "  + e4.getFirstName() + e4.getLastName() + "/ "  + e4.getGender() + "/ " 
-				+ e4.getTitle() + e4.getGrade() + "/ "  + e4.getSalary() + "/ " + e4.getBonus());
+//		Utility.echo(Statistics.averageSalary() + "");
+
+
+		// Polymorphism example. 
+//		Statistics.calculateBonusWithPolymorphism();
+
+		Statistics.averageSalaryPerProfession(); 
+				
+
 	}
 
 }

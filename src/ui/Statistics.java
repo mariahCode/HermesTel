@@ -1,7 +1,9 @@
 package ui;
 
-import java.util.ArrayList;
 import employee.Employee;
+import employee.Sales;
+import employee.Secretary;
+import employee.Technician;
 import utilities.Utility;
 
 public class Statistics {
@@ -23,10 +25,28 @@ public class Statistics {
 		return Utility.divide(totalSalary, Employee.employeeList.size());
 	}
 
-	//	public double averageSalaryPerProfession() {
-//		
-//	}
-//	
+	static public void averageSalaryPerProfession() {
+		for (Employee employee : Employee.employeeList) {
+			employee.calculateTotalSalaryPerProfession(employee);
+		}
+		Sales.calculateAverageSalaryPerProfession();
+		Secretary.calculateAverageSalaryPerProfession();
+		Technician.calculateAverageSalaryPerProfession(); 
+	}
+
+	// Polymorphism example. 
+	static public String calculateBonusWithPolymorphism() {
+		
+		String maria = "";
+		for (Employee employee : Employee.employeeList) {
+			maria = "" + employee.calculateBonus(employee);
+			Utility.echo(maria);
+		}
+		return maria;
+	}
+
+	
+	//	
 //	public double averageGenderOverall() {
 //		
 //	}
