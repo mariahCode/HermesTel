@@ -2,20 +2,22 @@ package employee;
 
 import javax.swing.JOptionPane;
 
+import utilities.GenderType;
+import utilities.GradeType;
 import utilities.Utility;
 
 public class Secretary extends Employee {
 
 	// Member variables. 
-//	private String empID; // TODO enum? ex of values: dev site, sales office, customer/call/admin center
+//	private String empID; // TODO enum? ex of values: dev site, secretary office, customer/call/admin center
 	
 	// Class variables. 
 	static public double averageSalaryForSecretary; // Make private 
 	public static int nSecretary = 0;
 
 	// Constructor. 
-	public Secretary(String firstName, String lastName, String gender, String title, int grade,
-			double salary, double bonus) {
+	public Secretary(String firstName, String lastName, GenderType gender, String title, GradeType grade, double salary,
+			double bonus) {
 		
 		super("SEC_", firstName, lastName, gender, title, grade, salary, bonus);
 		
@@ -33,11 +35,80 @@ public class Secretary extends Employee {
 		Secretary secretary = (Secretary)employee;
 		
 		// Ask for the new values. 
-		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + secretary.getEmpID() + "!");	
-		secretary.setFirstName(s); 
-		Utility.echo(s);
 
+		
+		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + secretary.getEmpID() + "!");
+		secretary.setFirstName(s);
+		System.out.println("The First name :");
+//		Utility.echo(s);
+		System.out.println(":::::::::::::::::::::");
+
+		String s1 = JOptionPane.showInputDialog("Enter new last name for the employee " + secretary.getEmpID() + "!");
+		secretary.setLastName(s1);
+		System.out.println("The last name :");
+//		Utility.echo(s1);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s1);
+		
+		String s3 = JOptionPane.showInputDialog("Enter new gender for the employee (MALE/FEMALE/UNKNOWN) " + secretary.getEmpID() + "!");
+		
+		if (s3.equalsIgnoreCase("male")){
+			secretary.setGender(GenderType.MALE);
+		}
+		else if (s3.equalsIgnoreCase("female")){
+			secretary.setGender(GenderType.FEMALE);
+		}
+		else if (s3.equalsIgnoreCase("unknown")){
+			secretary.setGender(GenderType.UNKNOWN);
+		}
+	
+		
+		System.out.println("The gender :");
+//		Utility.echo(s3);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s3);
+		
+		String s4 = JOptionPane.showInputDialog("Enter new title for the employee " + secretary.getEmpID() + "!");
+		secretary.setTitle(s4);
+		System.out.println("The title :");
+//		Utility.echo(s4);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s4);
+		
+		String s5 = JOptionPane.showInputDialog("Enter new grade for the employee (REP/HOS/HOD) " + secretary.getEmpID() + "!");
+		if (s5.equalsIgnoreCase("REP")){
+			secretary.setGrade(GradeType.REP);
+		}
+		else if (s5.equalsIgnoreCase("HOS")){
+			secretary.setGrade(GradeType.HOS);
+		}
+		else if (s5.equalsIgnoreCase("HOD")){
+			secretary.setGrade(GradeType.HOD);
+		}
+		
+		System.out.println("The grade :");
+//		Utility.echo(s5);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s5);
+		
+		
+		String s6 = JOptionPane.showInputDialog("Enter new grade for the employee " + secretary.getEmpID() + "!");
+		
+		secretary.setSalary(Double.parseDouble(s6));
+		System.out.println("The Salary :");
+//		Utility.echo(s6);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s6);
+		
+		String s7 = JOptionPane.showInputDialog("Enter new grade for the employee " + secretary.getEmpID() + "!");
+		secretary.setBonus(Double.parseDouble(s7));
+		System.out.println("The bouns :");
+//		Utility.echo(s7);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s7);
 	}
+
+	
 
 	@Override
 	public String mariaTest(Employee employee) {

@@ -2,6 +2,8 @@ package employee;
 
 import javax.swing.JOptionPane;
 
+import utilities.GenderType;
+import utilities.GradeType;
 import utilities.Utility;
 
 public class Technician extends Employee {
@@ -13,8 +15,8 @@ public class Technician extends Employee {
 	public static int nTechnician = 0;
 
 	// Constructor. 
-	public Technician(String firstName, String lastName, String gender, String title, int grade,
-			double salary, double bonus) {
+	public Technician(String firstName, String lastName, GenderType gender, String title, GradeType grade, double salary,
+			double bonus) {
 		
 		super("TEC_", firstName, lastName, gender, title, grade, salary, bonus);
 	
@@ -30,10 +32,79 @@ public class Technician extends Employee {
 		Technician technician = (Technician)employee;
 		
 		// Ask for the new values. 
-		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + technician.getEmpID() +  "!");	
-		Utility.echo(s);
-		technician.setFirstName(s); 
 
+		
+		
+		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + technician.getEmpID() + "!");
+		technician.setFirstName(s);
+		System.out.println("The First name :");
+//		Utility.echo(s);
+		System.out.println(":::::::::::::::::::::");
+
+		String s1 = JOptionPane.showInputDialog("Enter new last name for the employee " + technician.getEmpID() + "!");
+		technician.setLastName(s1);
+		System.out.println("The last name :");
+//		Utility.echo(s1);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s1);
+		
+		String s3 = JOptionPane.showInputDialog("Enter new gender for the employee (MALE/FEMALE/UNKNOWN) " + technician.getEmpID() + "!");
+		
+		if (s3.equalsIgnoreCase("male")){
+			technician.setGender(GenderType.MALE);
+		}
+		else if (s3.equalsIgnoreCase("female")){
+			technician.setGender(GenderType.FEMALE);
+		}
+		else if (s3.equalsIgnoreCase("unknown")){
+			technician.setGender(GenderType.UNKNOWN);
+		}
+	
+		
+		System.out.println("The gender :");
+//		Utility.echo(s3);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s3);
+		
+		String s4 = JOptionPane.showInputDialog("Enter new title for the employee " + technician.getEmpID() + "!");
+		technician.setTitle(s4);
+		System.out.println("The title :");
+//		Utility.echo(s4);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s4);
+		
+		String s5 = JOptionPane.showInputDialog("Enter new grade for the employee (REP/HOS/HOD) " + technician.getEmpID() + "!");
+		if (s5.equalsIgnoreCase("REP")){
+			technician.setGrade(GradeType.REP);
+		}
+		else if (s5.equalsIgnoreCase("HOS")){
+			technician.setGrade(GradeType.HOS);
+		}
+		else if (s5.equalsIgnoreCase("HOD")){
+			technician.setGrade(GradeType.HOD);
+		}
+		
+		System.out.println("The grade :");
+//		Utility.echo(s5);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s5);
+		
+		
+		String s6 = JOptionPane.showInputDialog("Enter new grade for the employee " + technician.getEmpID() + "!");
+		
+		technician.setSalary(Double.parseDouble(s6));
+		System.out.println("The Salary :");
+//		Utility.echo(s6);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s6);
+		
+		String s7 = JOptionPane.showInputDialog("Enter new grade for the employee " + technician.getEmpID() + "!");
+		technician.setBonus(Double.parseDouble(s7));
+		System.out.println("The bouns :");
+//		Utility.echo(s7);
+		System.out.println(":::::::::::::::::::::");
+//		Utility.echo(s7);
+	}
 		
 		// update the existing technician
 		
@@ -44,7 +115,7 @@ public class Technician extends Employee {
 //		}		
 
 		
-	}
+	
 
 	// Methods. 
 	// TODO Add specific method. 
