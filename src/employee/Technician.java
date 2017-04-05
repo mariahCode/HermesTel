@@ -43,13 +43,13 @@ public class Technician extends Employee {
 		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + technician.getEmpID() + "!");
 		technician.setFirstName(s);
 		System.out.println("The First name :");
-//		Utility.echo(s);
+		Utility.echo(s);
 		System.out.println(":::::::::::::::::::::");
 
 		String s1 = JOptionPane.showInputDialog("Enter new last name for the employee " + technician.getEmpID() + "!");
 		technician.setLastName(s1);
 		System.out.println("The last name :");
-//		Utility.echo(s1);
+		Utility.echo(s1);
 		System.out.println(":::::::::::::::::::::");
 //		Utility.echo(s1);
 		
@@ -67,14 +67,14 @@ public class Technician extends Employee {
 	
 		
 		System.out.println("The gender :");
-//		Utility.echo(s3);
+		Utility.echo(s3);
 		System.out.println(":::::::::::::::::::::");
 //		Utility.echo(s3);
 		
-		String s4 = JOptionPane.showInputDialog("Enter new title for the employee " + technician.getEmpID() + "!");
+		String s4 = JOptionPane.showInputDialog("Enter new title for the employee (REP/HOS/HOD) " + technician.getEmpID() + "!");
 		technician.setTitle(s4);
 		System.out.println("The title :");
-//		Utility.echo(s4);
+		Utility.echo(s4);
 		System.out.println(":::::::::::::::::::::");
 //		Utility.echo(s4);
 		
@@ -90,23 +90,32 @@ public class Technician extends Employee {
 		}
 		
 		System.out.println("The grade :");
-//		Utility.echo(s5);
+		Utility.echo(s5);
 		System.out.println(":::::::::::::::::::::");
 //		Utility.echo(s5);
 		
 		
-		String s6 = JOptionPane.showInputDialog("Enter new grade for the employee " + technician.getEmpID() + "!");
+		String s6 = JOptionPane.showInputDialog("Enter new salary for the employee " + technician.getEmpID() + "!");
 		
 		technician.setSalary(Double.parseDouble(s6));
 		System.out.println("The Salary :");
-//		Utility.echo(s6);
+		Utility.echo(s6);
 		System.out.println(":::::::::::::::::::::");
 //		Utility.echo(s6);
 		
-		String s7 = JOptionPane.showInputDialog("Enter new grade for the employee " + technician.getEmpID() + "!");
-		technician.setBonus(Double.parseDouble(s7));
+		String s7 = JOptionPane.showInputDialog("Enter new bouns for the employee " + technician.getEmpID() + "!");
+//		technician.setBonus(Double.parseDouble(s7));
+		if (s7.equalsIgnoreCase("REP")){
+			technician.setBonus(2000);
+		}
+		else if (s7.equalsIgnoreCase("HOS")){
+			technician.setBonus(5000);
+		}
+		else if (s7.equalsIgnoreCase("HOD")){
+			technician.setBonus(10000);
+		}
 		System.out.println("The bouns :");
-//		Utility.echo(s7);
+		Utility.echo(s7);
 		System.out.println(":::::::::::::::::::::");
 //		Utility.echo(s7);
 	}

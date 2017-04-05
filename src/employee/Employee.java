@@ -161,7 +161,7 @@ abstract public class Employee {
 
 				// TODO Info message: This employee was removed.
 				System.out.println("The Employee" + "/ " + employee.getEmpID() + "/ " + employee.getFirstName() + "/ "
-						+ employee.getLastName() + "/ " + employee.getGender() + "/ " + employee.getGrade() + "/ "
+						+ employee.getLastName() + "/ " + employee.getGender() + "/ "+ employee.getTitle()+"/ "+ employee.getGrade() + "/ "
 						+ employee.getSalary() + "/ " + employee.getBonus() + "/ " + " Was moved to" + " "
 						+ Employee.typeOfEmployee);
 				System.out.println(
