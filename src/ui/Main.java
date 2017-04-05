@@ -4,7 +4,8 @@ import employee.Employee;
 import employee.SalesPerson;
 import employee.Secretary;
 import employee.Technician;
-import utilities.Utility;
+import utilities.*;
+
 
 public class Main {
 
@@ -21,11 +22,13 @@ public class Main {
 		// grade,
 		// double salary, double bonus)
 		// TODO ask for the values.
-		Technician e1 = new Technician("Bardia", "Fathi", "UNKNOWN", "HOD", 3, 30000.00, 1500.00);
-		Technician e2 = new Technician("Maria", "LastName", "FEMALE", "HOS", 2, 25000.00, 1000.00);
-		SalesPerson e3 = new SalesPerson("Almothana", "Aboush", "MALE", "HOD", 3, 10000.00, 10000.00);
-		Secretary e4 = new Secretary("Mera", "Alxander", "FEMALE", "REP", 1, 20000.00, 1000.00);
-		SalesPerson e5 = new SalesPerson("Mothana", "Aboush", "MALE", "HOD", 3, 20000.00, 10000.00);
+
+		Technician e1 = new Technician("Bardia", "Fathi", GenderType.MALE, "HOD",GradeType.HOD, 30000.00, 1500.00);
+		Technician e2 = new Technician("Maria", "LastName", GenderType.FEMALE, "HOS", GradeType.HOS, 25000.00, 1000.00);
+		SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
+		Secretary e4 = new Secretary("Mera", "Alxander", GenderType.FEMALE, "REP", GradeType.REP, 20000.00, 1000.00);
+		SalesPerson e5 = new SalesPerson("Mothana", "Aboush", GenderType.FEMALE, "HOD", GradeType.HOD, 20000.00, 10000.00);
+
 
 //		System.out.println(e1.getEmpID() + "/ " + e1.getFirstName() + e1.getLastName() + "/ " + e1.getGender() + " /"
 //				+ e1.getTitle() + e1.getGrade() + "/ " + e1.getSalary() + "/ " + e1.getBonus());
@@ -44,10 +47,11 @@ public class Main {
 //		System.out.println(e3.getEmpID() + " " + e3.getFirstName() + e3.getLastName() + " " + e3.getGender() + " "
 //				+ e3.getTitle() + e3.getGrade() + " " + e3.getSalary() + " " + e3.getBonus());
 //
-//		 e4.updateEmployee(e4.getEmpID());
-//		 System.out.println();
-//		 e5.updateEmployee(e5.getEmpID());
-//		 System.out.println();
+		 e4.updateEmployee(e4.getEmpID());
+		 System.out.println();
+		 e5.updateEmployee(e5.getEmpID());
+		 System.out.println();
+
 //		 		 
 //		 System.out.println("----------------------");
 //		 System.out.println();
