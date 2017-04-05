@@ -37,6 +37,8 @@ public class Statistics {
 		totalSalary = calculateAverageSalary(Employee.employeeList);		
 
 		// Print out the result to the console.
+		Utility.echo("");
+		Utility.echo("**************************************");
 		Utility.echo("Average salary overall: " + Utility.divide(totalSalary, Employee.employeeList.size()));
 	}
 

@@ -14,6 +14,7 @@ abstract public class Employee {
 	private String lastName;
 	private GenderType gender; // TODO enum
 	private String title; // TODO enum
+
 	private String profission;
 	private static String typeOfEmployee = "";// TODO enum (REPresentative.
 												// HeadOfSection.
@@ -22,6 +23,7 @@ abstract public class Employee {
 
 	private double salary = 50000.00;
 	private double bonus = 5000.00;
+
 
 	// TODO should be private?
 	static public ArrayList<Employee> employeeList = new ArrayList<>();
@@ -224,12 +226,12 @@ abstract public class Employee {
 	// public calculateSalary()
 	// calculateBonus()
 
-	public String getDepartement() {
-		return profission;
-	}
-
-	public void setDepartement(String departement) {
-		this.profission = departement;
-	}
+//	public String getDepartement() {
+//		return profession;
+//	}
+//
+//	public void setDepartement(String departement) {
+//		this.profession = departement;
+//	}
 
 }
