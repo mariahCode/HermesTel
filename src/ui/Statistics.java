@@ -4,6 +4,7 @@ import employee.Employee;
 import employee.SalesPerson;
 import employee.Secretary;
 import employee.Technician;
+import utilities.GenderType;
 import utilities.Utility;
 
 public class Statistics {
@@ -65,7 +66,6 @@ public class Statistics {
 	
 	// Get gender distribution in percentage for ALL employees. 
 	public static void averageGenderOverall() {
-//		MALE,FEMALE,UNKNOWN;
 		
 		int nMale = 0;
 		int nFemale = 0;
@@ -75,12 +75,12 @@ public class Statistics {
 		for (Employee employee : Employee.employeeList) {
 
 //			Utility.echo("Testing: " + "Gender: " + employee.getGender()); 		
-			if (employee.getGender().equals("MALE")) { // TODO MH Use GenderType enum?
+			if (employee.getGender().equals(GenderType.MALE)) { 
 				nMale++;
 //				Utility.echo("Testing: " + "nMale: " + nMale); 
-			} else if (employee.getGender().equals("FEMALE")) {
+			} else if (employee.getGender().equals(GenderType.FEMALE)) {
             	nFemale++;				
-			} else if (employee.getGender().equals("UNKNOWN")) {
+			} else if (employee.getGender().equals(GenderType.UNKNOWN)) {
             	nUnknown++;				
 			}
 			
@@ -117,7 +117,7 @@ public class Statistics {
 
 //			Utility.echo("Testing: " + "Gender: " + employee.getGender()); 		
 
-			if (employee.getGender().equals("MALE")) { // TODO MH Use GenderType enum?
+			if (employee.getGender().equals(GenderType.MALE)) { // TODO MH Use GenderType enum?
 				
 				if (employee instanceof SalesPerson) {
 					nMaleSalesPersons++; 
@@ -126,7 +126,7 @@ public class Statistics {
 				} else if (employee instanceof Technician) {
 					nMaleTechnician++; 				
 				}			
-			} else if (employee.getGender().equals("FEMALE")) {
+			} else if (employee.getGender().equals(GenderType.FEMALE)) {
 				if (employee instanceof SalesPerson) {
 					nFemaleSalesPersons++; 
 				} else if (employee instanceof Secretary) {
@@ -134,7 +134,7 @@ public class Statistics {
 				} else if (employee instanceof Technician) {
 					nFemaleTechnician++; 				
 				}			
-			} else if (employee.getGender().equals("UNKNOWN")) {
+			} else if (employee.getGender().equals(GenderType.UNKNOWN)) {
 				if (employee instanceof SalesPerson) {
 					nUnknownSalesPersons++; 
 				} else if (employee instanceof Secretary) {
@@ -148,31 +148,34 @@ public class Statistics {
 		// Calculate the percentage, and Print out to the console. For Salespersons.  
 		Utility.echo("");
 		Utility.echo("Gender distribution for Salespersons: ");
-		percent = Utility.getPercentageDistribution(nMaleSalesPersons, Employee.employeeList.size());
+		int totalNumberOfSalespersons = nMaleSalesPersons + nFemaleSalesPersons + nUnknownSalesPersons; 
+		percent = Utility.getPercentageDistribution(nMaleSalesPersons, totalNumberOfSalespersons);
 		Utility.echo("Male in percent: " + percent);
-		percent = Utility.getPercentageDistribution(nFemaleSalesPersons, Employee.employeeList.size());
+		percent = Utility.getPercentageDistribution(nFemaleSalesPersons, totalNumberOfSalespersons);
 		Utility.echo("Female in percent: " + percent);
-		percent = Utility.getPercentageDistribution(nUnknownSalesPersons, Employee.employeeList.size());
+		percent = Utility.getPercentageDistribution(nUnknownSalesPersons, totalNumberOfSalespersons);
 		Utility.echo("Unknown in percent: " + percent);
 
 		// Calculate the percentage, and Print out to the console. For Secretaries.  
 		Utility.echo("");
 		Utility.echo("Gender distribution for Secretaries: ");
-		percent = Utility.getPercentageDistribution(nMaleSecretary, Employee.employeeList.size());
+		int totalNumberOfSecretaries = nMaleSecretary + nFemaleSecretary + nUnknownSecretary; 
+		percent = Utility.getPercentageDistribution(nMaleSecretary, totalNumberOfSecretaries);
 		Utility.echo("Female in percent: " + percent);
-		percent = Utility.getPercentageDistribution(nFemaleSecretary, Employee.employeeList.size());
+		percent = Utility.getPercentageDistribution(nFemaleSecretary, totalNumberOfSecretaries);
 		Utility.echo("Male in percent: " + percent);
-		percent = Utility.getPercentageDistribution(nUnknownSecretary, Employee.employeeList.size());
+		percent = Utility.getPercentageDistribution(nUnknownSecretary, totalNumberOfSecretaries);
 		Utility.echo("Unknown in percent: " + percent);
 
 		// Calculate the percentage, and Print out to the console. For Technicians.  
 		Utility.echo("");
 		Utility.echo("Gender distribution for Technicians: ");
-		percent = Utility.getPercentageDistribution(nMaleTechnician, Employee.employeeList.size());
+		int totalNumberOfTechnicians = nMaleTechnician + nFemaleTechnician + nUnknownTechnician; 
+		percent = Utility.getPercentageDistribution(nMaleTechnician, totalNumberOfTechnicians);
 		Utility.echo("Male in percent: " + percent);
-		percent = Utility.getPercentageDistribution(nFemaleTechnician, Employee.employeeList.size());
+		percent = Utility.getPercentageDistribution(nFemaleTechnician, totalNumberOfTechnicians);
 		Utility.echo("Female in percent: " + percent);
-		percent = Utility.getPercentageDistribution(nUnknownTechnician, Employee.employeeList.size());
+		percent = Utility.getPercentageDistribution(nUnknownTechnician, totalNumberOfTechnicians);
 		Utility.echo("Unknown in percent: " + percent);
 
 	}
