@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 import utilities.Utility;
 
-public class Sales extends Employee {
+public class SalesPerson extends Employee {
 
 	// Member variables. 
 //	private String empID; // TODO enum? ex of values: dev site, sales office, customer/call/admin center
@@ -14,7 +14,7 @@ public class Sales extends Employee {
 	public static int nSales = 0;
 
 	// Constructor. 
-	public Sales(String firstName, String lastName, String gender, String title, int grade,
+	public SalesPerson(String firstName, String lastName, String gender, String title, int grade,
 			double salary, double bonus) {
 		
 		super("SAL_", firstName, lastName, gender, title, grade, salary, bonus);
@@ -30,19 +30,29 @@ public class Sales extends Employee {
 	@Override
 	public void updateEmployee(Employee employee) {
 
-		Sales sales = (Sales)employee;
+		SalesPerson sales = (SalesPerson)employee;
 		
 		// Ask for the new values. 
 		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + sales.getEmpID() + "!");	
-		sales.setFirstName(s); 
+		sales.setFirstName(s);
+		System.out.println("The First name :");
 		Utility.echo(s);
+		System.out.println(":::::::::::::::::::::");
+
+		String s1 = JOptionPane.showInputDialog("Enter new last name for the employee " + sales.getEmpID() + "!");	
+		sales.setLastName(s1); 
+		System.out.println("The last name :");
+		Utility.echo(s1);
+		System.out.println(":::::::::::::::::::::");
+		Utility.echo(s1);
+		
 
 	}
 
 	@Override
 	public String mariaTest(Employee employee) {
 
-		Sales sales = (Sales)employee;
+		SalesPerson sales = (SalesPerson)employee;
 		Utility.echo("Sales");
 		return ""; 
 
@@ -51,7 +61,7 @@ public class Sales extends Employee {
 	@Override
 	public double calculateBonus(Employee employee) {
 
-		Sales sales = (Sales)employee;
+		SalesPerson sales = (SalesPerson)employee;
 		Utility.echo("Sales");
 		return 1000.00; 
 	}	

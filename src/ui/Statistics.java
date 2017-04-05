@@ -1,7 +1,7 @@
 package ui;
 
 import employee.Employee;
-import employee.Sales;
+import employee.SalesPerson;
 import employee.Secretary;
 import employee.Technician;
 import utilities.Utility;
@@ -40,7 +40,7 @@ public class Statistics {
 		for (Employee employee : Employee.employeeList) {
 			employee.calculateTotalSalaryPerProfession(employee);
 		}
-		Sales.calculateAverageSalaryPerProfession();
+		SalesPerson.calculateAverageSalaryPerProfession();
 		Secretary.calculateAverageSalaryPerProfession();
 		Technician.calculateAverageSalaryPerProfession(); 
 	}

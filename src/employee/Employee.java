@@ -12,7 +12,7 @@ abstract public class Employee {
 	private String lastName;
 	private String gender; // TODO enum
 	private String title; // TODO enum
-	private String departement; 
+	private String profission; 
 	private static String typeOfEmployee ="" ;// TODO enum (REPresentative. HeadOfSection.
 								// HOOffice)
 	private int grade; // TODO enum (1, 2, 3)
@@ -33,6 +33,7 @@ abstract public class Employee {
 	}
 
 	public String getFirstName() {
+		
 		return firstName;
 	}
 
@@ -42,6 +43,7 @@ abstract public class Employee {
 
 	public String getLastName() {
 		return lastName;
+		
 	}
 
 	public void setLastName(String lastName) {
@@ -120,7 +122,7 @@ abstract public class Employee {
 			if (employee instanceof Technician){
 				typeOfEmployee = "Technician";
 			}
-			else if (employee instanceof Sales){
+			else if (employee instanceof SalesPerson){
 				
 				typeOfEmployee = "Sales";
 			}
@@ -131,9 +133,9 @@ abstract public class Employee {
 				employeeList.remove(employee);
 				
 				// TODO Info message: This employee was removed.
-				System.out.println("The Employee" + "/ " + employee.getFirstName() + employee.getLastName() + "/ "
+				System.out.println("The Employee from "+ Employee.typeOfEmployee +"/ "+employee.getEmpID() +"/ " + employee.getFirstName() +  "/ "+employee.getLastName() + "/ "
 						+ employee.getGender() + "/ " + employee.getGrade() + "/ " + employee.getSalary() + "/ "
-						+ employee.getBonus()+"/ "+ typeOfEmployee );
+						+ employee.getBonus()+"/ "+ " Was removed ");
 				break;
 			}
 		}
@@ -146,7 +148,7 @@ abstract public class Employee {
 				if (employee instanceof Technician){
 					typeOfEmployee = "Technician";
 				}
-				else if (employee instanceof Sales){
+				else if (employee instanceof SalesPerson){
 					
 					typeOfEmployee = "Sales";
 				}
@@ -156,9 +158,10 @@ abstract public class Employee {
 				}
 
 				// TODO Info message: This employee was removed.
-				System.out.println("The Employee" + "/ " + employee.getFirstName() + employee.getLastName() + "/ "
+				System.out.println("The Employee" +"/ "+employee.getEmpID()+ "/ " + employee.getFirstName() + "/ "+employee.getLastName() + "/ "
 						+ employee.getGender() + "/ " + employee.getGrade() + "/ " + employee.getSalary() + "/ "
-						+ employee.getBonus());
+						+ employee.getBonus()+"/ "+ " Was moved to"+ " "+ Employee.typeOfEmployee);
+				System.out.println("-----------------------------------------------------------------------------------------------");
 				break;
 			}
 		}
@@ -216,11 +219,11 @@ abstract public class Employee {
 	// calculateBonus()
 
 	public String getDepartement() {
-		return departement;
+		return profission;
 	}
 
 	public void setDepartement(String departement) {
-		this.departement = departement;
+		this.profission = departement;
 	}
 
 }
