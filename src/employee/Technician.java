@@ -1,92 +1,180 @@
 package employee;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
+import utilities.GenderType;
+import utilities.GradeType;
 import utilities.Utility;
 
 public class Technician extends Employee {
 
-	// Member variables. 
+	// Member variables.
 
-	// Class variables. 
-	static public double averageSalaryForTechnician; // Make private 
+	// Class variables.
+	static public double averageSalaryForTechnician; // Make private
 	public static int nTechnician = 0;
+	static public ArrayList<Technician> technicianList = new ArrayList<>();
 
-	// Constructor. 
-	public Technician(String firstName, String lastName, String gender, String title, int grade,
+	// Constructor.
+	public Technician(String firstName, String lastName, GenderType gender, String title, GradeType grade,
 			double salary, double bonus) {
-		
+
 		super("TEC_", firstName, lastName, gender, title, grade, salary, bonus);
-	
-		nTechnician++; 
+
+		nTechnician++;
 
 		employeeList.add(this);
+		technicianList.add(this);
+
 	}
-	
+
 	@Override
 	public void updateEmployee(Employee employee) {
 		// TODO Add code here
-		
-		Technician technician = (Technician)employee;
-		
-		// Ask for the new values. 
-		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + technician.getEmpID() +  "!");	
+
+		Technician technician = (Technician) employee;
+
+		// Ask for the new values.
+
+		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + technician.getEmpID() + "!");
+		if (s == null)
+			System.exit(0);
+		technician.setFirstName(s);
+		System.out.println("The First name :");
 		Utility.echo(s);
-		technician.setFirstName(s); 
+		System.out.println(":::::::::::::::::::::");
 
-		
-		// update the existing technician
-		
-		
-		
-//		for (Employee t : employeeList) {
-//			t.print(); 
-//		}		
+		String s1 = JOptionPane.showInputDialog("Enter new last name for the employee " + technician.getEmpID() + "!");
+		if (s1 == null)
+			System.exit(0);
+		technician.setLastName(s1);
+		System.out.println("The last name :");
+		Utility.echo(s1);
+		System.out.println(":::::::::::::::::::::");
+		// Utility.echo(s1);
 
-		
+		String s3 = JOptionPane.showInputDialog("Enter new gender for the employee (MALE/FEMALE/UNKNOWN) " + technician.getEmpID() + "!");
+		if (s3 == null)
+			System.exit(0);
+		if (s3.equalsIgnoreCase("male")) {
+			technician.setGender(GenderType.MALE);
+		} else if (s3.equalsIgnoreCase("female")) {
+			technician.setGender(GenderType.FEMALE);
+		} else if (s3.equalsIgnoreCase("unknown")) {
+			technician.setGender(GenderType.UNKNOWN);
+		}
+
+		System.out.println("The gender :");
+		Utility.echo(s3);
+		System.out.println(":::::::::::::::::::::");
+		// Utility.echo(s3);
+
+		String s4 = JOptionPane.showInputDialog("Enter new title for the employee " + technician.getEmpID() + "!");
+		if (s4 == null)
+			System.exit(0);
+		technician.setTitle(s4);
+		System.out.println("The title :");
+		Utility.echo(s4);
+		System.out.println(":::::::::::::::::::::");
+		// Utility.echo(s4);
+
+		String s5 = JOptionPane.showInputDialog("Enter new grade for the employee (REP/HOS/HOD) " + technician.getEmpID() + "!");
+		if (s5 == null)
+			System.exit(0);
+		if (s5.equalsIgnoreCase("REP")) {
+			technician.setGrade(GradeType.REP);
+			technician.setBonus(2000);
+		} else if (s5.equalsIgnoreCase("HOS")) {
+			technician.setGrade(GradeType.HOS);
+			technician.setBonus(5000);
+		} else if (s5.equalsIgnoreCase("HOD")) {
+			technician.setGrade(GradeType.HOD);
+			technician.setBonus(10000);
+		}
+
+		System.out.println("The grade :");
+		Utility.echo(s5);
+		System.out.println(":::::::::::::::::::::");
+		// Utility.echo(s5);
+
+		String s6 = JOptionPane.showInputDialog("Enter new salary for the employee " + technician.getEmpID() + "!");
+		if (s6 == null)
+			System.exit(0);
+		technician.setSalary(Double.parseDouble(s6));
+		System.out.println("The Salary :");
+		Utility.echo(s6);
+		System.out.println(":::::::::::::::::::::");
+		// Utility.echo(s6);
+
+		// String s7 = JOptionPane.showInputDialog("Enter new bouns for the
+		// employee " + technician.getEmpID() + "!");
+		//// technician.setBonus(Double.parseDouble(s7));
+		// if (s7.equalsIgnoreCase("REP")){
+		// technician.setBonus(2000);
+		// }
+		// else if (s7.equalsIgnoreCase("HOS")){
+		// technician.setBonus(5000);
+		// }
+		// else if (s7.equalsIgnoreCase("HOD")){
+		// technician.setBonus(10000);
+		// }
+		System.out.println("The bouns :");
+		// Utility.echo(s7);
+		System.out.println(technician.getBonus());
+		System.out.println(":::::::::::::::::::::");
+		// Utility.echo(s7);
 	}
 
-	// Methods. 
-	// TODO Add specific method. 
+	// update the existing technician
+
+	// for (Employee t : employeeList) {
+	// t.print();
+	// }
+
+	// Methods.
+	// TODO Add specific method.
 
 	@Override
 	public String mariaTest(Employee employee) {
 
-		Technician technician = (Technician)employee;
-		
+		Technician technician = (Technician) employee;
+
 		Utility.echo("Technician");
-		return ""; 
+		return "";
 
 	}
 
 	@Override
 	public double calculateBonus(Employee employee) {
 
-		Technician technician = (Technician)employee;
-		
+		Technician technician = (Technician) employee;
+
 		Utility.echo("Technician");
-				
-		return 3000.00; 
+
+		return 3000.00;
 
 	}
-	
-	// TODO MH Remove?	
-//	@Override
-//	public void calculateTotalSalaryPerProfession(Employee employee) {
-//
-//		averageSalaryForTechnician += employee.getSalary(); 
-//		Utility.echo("" + employee.getSalary());
-//	}	
 
-	// TODO MH Remove?	
-//	@Override
-//	public static void calculateAverageSalaryPerProfession() {
-//
-//		Utility.echo("" + averageSalaryForTechnician);
-//		Utility.echo("" + nTechnician);
-//
-//		Utility.echo("averageSalaryForTechnician: " + Utility.divide(averageSalaryForTechnician, nTechnician));
-//				
-//	}	
+	// TODO MH Remove?
+	// @Override
+	// public void calculateTotalSalaryPerProfession(Employee employee) {
+	//
+	// averageSalaryForTechnician += employee.getSalary();
+	// Utility.echo("" + employee.getSalary());
+	// }
+
+	// TODO MH Remove?
+	// @Override
+	// public static void calculateAverageSalaryPerProfession() {
+	//
+	// Utility.echo("" + averageSalaryForTechnician);
+	// Utility.echo("" + nTechnician);
+	//
+	// Utility.echo("averageSalaryForTechnician: " +
+	// Utility.divide(averageSalaryForTechnician, nTechnician));
+	//
+	// }
 
 }
