@@ -34,16 +34,16 @@ public class Main {
 //				+ e1.getTitle() + e1.getGrade() + "/ " + e1.getSalary() + "/ " + e1.getBonus());
 //		System.out.println(e2.getEmpID() + " " + e2.getFirstName() + e2.getLastName() + " " + e2.getGender() + " "
 //				+ e2.getTitle() + e2.getGrade() + " " + e2.getSalary() + " " + e2.getBonus());
-		System.out.println(e3.getEmpID() + " " + e3.getFirstName() + e3.getLastName() + " " + e3.getGender() + " "
-				+ e3.getTitle() + e3.getGrade() + " " + e3.getSalary() + " " + e3.getBonus());
+//		System.out.println(e3.getEmpID() + " " + e3.getFirstName() + e3.getLastName() + " " + e3.getGender() + " "
+//				+ e3.getTitle() + e3.getGrade() + " " + e3.getSalary() + " " + e3.getBonus());
 //		System.out.println(e4.getEmpID() + " " + e4.getFirstName() + e4.getLastName() + " " + e4.getGender() + " "
 //				+ e4.getTitle() + e4.getGrade() + " " + e4.getSalary() + " " + e4.getBonus());
 //
 //		e1.updateEmployee(e1.getEmpID());
 //		System.out.println();
 //
-		e3.updateEmployee(e3.getEmpID());
-		System.out.println();
+//		e3.updateEmployee(e3.getEmpID());
+//		System.out.println();
 //
 //		 e4.updateEmployee(e4.getEmpID());
 //		 System.out.println();
@@ -63,9 +63,8 @@ public class Main {
 		// Polymorphism example. 
 //		Statistics.calculateBonusWithPolymorphism();
 
-//		Statistics.averageSalaryOverall();
+		Statistics.averageSalaryOverall();
 //		Statistics.calculateAverageSalaryPerProfession(); 
-//		Statistics.calculateAverageSalaryPerProfession();
 //		Statistics.averageGenderOverall(); 
 //		Statistics.averageGenderPerProfession();
 //		Statistics.totalBonus(); 
