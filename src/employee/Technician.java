@@ -1,5 +1,7 @@
 package employee;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 import utilities.GenderType;
@@ -13,6 +15,7 @@ public class Technician extends Employee {
 	// Class variables.
 	static public double averageSalaryForTechnician; // Make private
 	public static int nTechnician = 0;
+	static public ArrayList<Technician> technicianList = new ArrayList<>();
 
 	// Constructor.
 	public Technician(String firstName, String lastName, GenderType gender, String title, GradeType grade,
@@ -23,6 +26,8 @@ public class Technician extends Employee {
 		nTechnician++;
 
 		employeeList.add(this);
+		technicianList.add(this);
+
 	}
 
 	@Override
