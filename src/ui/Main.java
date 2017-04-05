@@ -21,8 +21,8 @@ public class Main {
 		// grade,
 		// double salary, double bonus)
 		// TODO ask for the values.
-		Technician e1 = new Technician("Bardia", "Fathi", "Male", "HOD", 3, 10000.00, 1500.00);
-		Technician e2 = new Technician("Maria", "LastName", "Female", "HOS", 2, 20000.00, 1000.00);
+		Technician e1 = new Technician("Bardia", "Fathi", "Male", "HOD", 3, 30000.00, 1500.00);
+		Technician e2 = new Technician("Maria", "LastName", "Female", "HOS", 2, 25000.00, 1000.00);
 		Sales e3 = new Sales("Almothana", "Aboush", "Male", "HOD", 3, 10000.00, 10000.00);
 		Secretary e4 = new Secretary("Mera", "Alxander", "Female", "REP", 1, 20000.00, 1000.00);
 		Sales e5 = new Sales("Mothana", "Aboush", "Male", "HOD", 3, 20000.00, 10000.00);
@@ -60,7 +60,8 @@ public class Main {
 		// Polymorphism example. 
 //		Statistics.calculateBonusWithPolymorphism();
 
-		Statistics.averageSalaryPerProfession(); 
+		// TODO (MH) Improve this!
+		Statistics.calculateAverageSalaryPerProfession(); 
 				
 
 	}

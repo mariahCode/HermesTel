@@ -56,22 +56,11 @@ public class Sales extends Employee {
 		return 1000.00; 
 	}	
 	
-	@Override
-	public void calculateTotalSalaryPerProfession(Employee employee) {
-
-		averageSalaryForSales += employee.getSalary(); 
-		Utility.echo("Sale: " + employee.getSalary());
-	}	
-		
-//	@Override
-	public static void calculateAverageSalaryPerProfession() {
-
-		Utility.echo("" + averageSalaryForSales);
-		Utility.echo("" + nSales);
-
-		Utility.echo("averageSalaryForSales: " + Utility.divide(averageSalaryForSales, nSales));
-				
-	}	
-	
+// TODO MH Remove?	
+////	@Override
+//	public static double calculateAverageSalaryPerProfession() {
+//		Utility.echo(averageSalaryForSales + " / " + nSales);
+//		return Utility.divide(averageSalaryForSales, nSales); 
+//	}	
 	
 }
