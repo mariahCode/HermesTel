@@ -36,13 +36,17 @@ public class SalesPerson extends Employee {
 		SalesPerson sales = (SalesPerson) employee;
 
 		// Ask for the new values.
-		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + sales.getEmpID() + "!");
+		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + sales.getEmpID() + "!" );
+		if (s == null)
+			System.exit(0);
 		sales.setFirstName(s);
 		System.out.println("The First name :");
 		Utility.echo(s);
 		System.out.println(":::::::::::::::::::::");
 
 		String s1 = JOptionPane.showInputDialog("Enter new last name for the employee " + sales.getEmpID() + "!");
+		if (s1 == null)
+			System.exit(0);
 		sales.setLastName(s1);
 		System.out.println("The last name :");
 		Utility.echo(s1);
@@ -50,7 +54,8 @@ public class SalesPerson extends Employee {
 //		Utility.echo(s1);
 		
 		String s3 = JOptionPane.showInputDialog("Enter new gender for the employee (MALE/FEMALE/UNKNOWN) " + sales.getEmpID() + "!");
-		
+		if (s3 == null)
+			System.exit(0);
 		if (s3.equalsIgnoreCase("male")){
 			sales.setGender(GenderType.MALE);
 		}
@@ -68,6 +73,8 @@ public class SalesPerson extends Employee {
 //		Utility.echo(s3);
 		
 		String s4 = JOptionPane.showInputDialog("Enter new title for the employee " + sales.getEmpID() + "!");
+		if (s4 == null)
+			System.exit(0);
 		sales.setTitle(s4);
 		System.out.println("The title :");
 		System.out.println(sales.getTitle());
@@ -76,6 +83,8 @@ public class SalesPerson extends Employee {
 //		Utility.echo(s4);
 		
 		String s5 = JOptionPane.showInputDialog("Enter new grade for the employee (REP/HOS/HOD) " + sales.getEmpID() + "!");
+		if (s5 == null)
+			System.exit(0);
 		if (s5.equalsIgnoreCase("REP")){
 			sales.setGrade(GradeType.REP);
 			sales.setBonus(2500);
@@ -96,7 +105,8 @@ public class SalesPerson extends Employee {
 		
 		
 		String s6 = JOptionPane.showInputDialog("Enter new Salary for the employee " + sales.getEmpID() + "!");
-		
+		if (s6 == null)
+			System.exit(0);
 		sales.setSalary(Double.parseDouble(s6));
 		System.out.println("The Salary :");
 		Utility.echo(s6);
