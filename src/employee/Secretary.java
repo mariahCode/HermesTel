@@ -92,7 +92,7 @@ public class Secretary extends Employee {
 //		Utility.echo(s5);
 		
 		
-		String s6 = JOptionPane.showInputDialog("Enter new grade for the employee " + secretary.getEmpID() + "!");
+		String s6 = JOptionPane.showInputDialog("Enter new salary for the employee " + secretary.getEmpID() + "!");
 		
 		secretary.setSalary(Double.parseDouble(s6));
 		System.out.println("The Salary :");
@@ -100,8 +100,17 @@ public class Secretary extends Employee {
 		System.out.println(":::::::::::::::::::::");
 //		Utility.echo(s6);
 		
-		String s7 = JOptionPane.showInputDialog("Enter new grade for the employee " + secretary.getEmpID() + "!");
-		secretary.setBonus(Double.parseDouble(s7));
+		String s7 = JOptionPane.showInputDialog("Enter new bouns for the employee " + secretary.getEmpID() + "!");
+//		secretary.setBonus(Double.parseDouble(s7));
+		if (s7.equalsIgnoreCase("REP")){
+			secretary.setBonus(1000);
+		}
+		else if (s7.equalsIgnoreCase("HOS")){
+			secretary.setBonus(2000);
+		}
+		else if (s7.equalsIgnoreCase("HOD")){
+			secretary.setBonus(5000);
+		}
 		System.out.println("The bouns :");
 //		Utility.echo(s7);
 		System.out.println(":::::::::::::::::::::");
