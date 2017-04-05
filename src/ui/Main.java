@@ -69,10 +69,12 @@ public class Main {
 //		Statistics.calculateAverageSalaryPerProfession(); 
 //		Statistics.calculateAverageSalaryPerProfession();
 //		Statistics.averageGenderOverall(); 
-		Statistics.averageGenderPerProfession();
+//		Statistics.averageGenderPerProfession();
 //		Statistics.totalBonus(); 
 //		Statistics.totalBonusPerProfession();
-		
+//		Statistics.getHighestSalaryOverall(); 
+//		Statistics.getLowestSalaryOverall(); 
+				
 	}
 
 }
