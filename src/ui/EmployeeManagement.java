@@ -1,15 +1,26 @@
 package ui;
 
-public class EmployeeManagement {
+import utilities.Utility;
 
-	public void createEmployeeCatalogue() {
-		// TODO Auto-generated method stub
-		
+
+public class EmployeeManagement {
+	
+	// TODO IMPORTANT: Change this to (calling) applicable employee management methods. 
+
+	public static void addAnEmployee() {
+		Utility.echo("addAnEmployee()");
+	}
+	
+	public static void updateAnEmployee() {
+		Utility.echo("updateAnEmployee()");		
 	}
 
-	public void start() {
-		// TODO Auto-generated method stub
-		
+	public static void listInfoForAnEmployee() {
+		Utility.echo("listInfoForAnEmployee()");		
+	}
+
+	public static void removeAnEmployee() {
+		Utility.echo("removeAnEmployee()");		
 	}
 
 }

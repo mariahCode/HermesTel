@@ -37,8 +37,6 @@ public class Statistics {
 		totalSalary = calculateAverageSalary(Employee.employeeList);		
 
 		// Print out the result to the console.
-		Utility.echo("");
-		Utility.echo("**************************************");
 		Utility.echo("Average salary overall: " + Utility.divide(totalSalary, Employee.employeeList.size()));
 	}
 
@@ -98,9 +96,9 @@ public class Statistics {
 		percent = Utility.getPercentageDistribution(nMale, Employee.employeeList.size());
 		Utility.echo("Male in percent: " + percent);
 		percent = Utility.getPercentageDistribution(nFemale, Employee.employeeList.size());
-		Utility.echo("Male in percent: " + percent);
+		Utility.echo("Female in percent: " + percent);
 		percent = Utility.getPercentageDistribution(nUnknown, Employee.employeeList.size());
-		Utility.echo("Male in percent: " + percent);
+		Utility.echo("Unknown in percent: " + percent);
 
 	}
 
