@@ -96,9 +96,9 @@ abstract public class Employee {
 	// Constructor.
 	public Employee(String shortTitle, String firstName, String lastName, String gender, String title, int grade,
 			double salary, double bonus) {
+		
 		super();
-		this.empID = shortTitle + nEmployees++; // TODO: Add this to all sub
-												// classes.
+		this.empID = shortTitle + nEmployees++; 
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
@@ -109,16 +109,13 @@ abstract public class Employee {
 	}
 
 	// Methods.
-	// public void addEmployee() {
-	//
-	// }
-	//
 
 	static public void removeEmployee(String empID) {
 		
 		for (Employee employee : employeeList) {
 			
 			if (employee.empID.equals(empID)) {
+
 			if (employee instanceof Technician){
 				typeOfEmployee = "Technician";
 			}
@@ -128,12 +125,14 @@ abstract public class Employee {
 			}
 				else if (employee instanceof Secretary){
 					
+
 					typeOfEmployee = "Secretary";
-			}
+				}
 				employeeList.remove(employee);
 				
 				// TODO Info message: This employee was removed.
 				System.out.println("The Employee from "+ Employee.typeOfEmployee +"/ "+employee.getEmpID() +"/ " + employee.getFirstName() +  "/ "+employee.getLastName() + "/ "
+
 						+ employee.getGender() + "/ " + employee.getGrade() + "/ " + employee.getSalary() + "/ "
 						+ employee.getBonus()+"/ "+ " Was removed ");
 				break;
@@ -175,8 +174,9 @@ abstract public class Employee {
 	// Polymorphism example. 
 	abstract public double calculateBonus(Employee employee);
 
-	abstract public void calculateTotalSalaryPerProfession(Employee employee);
-//	abstract public void calculateAverageSalaryPerProfession();	
+	// TODO MH remove one row below?
+//	abstract public void calculateTotalSalaryPerProfession(Employee employee);
+//	abstract public double calculateAverageSalaryPerProfession();	
 	
 	// Trying to move this
 //	public double averageSalary() {

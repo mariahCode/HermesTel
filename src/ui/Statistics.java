@@ -36,13 +36,24 @@ public class Statistics {
 //	}
 
 	// bita: use instanceof in this case!
-	static public void averageSalaryPerProfession() {
+	static public void calculateAverageSalaryPerProfession() {
+		double totalSalaryForSales = 0.0; 
+		double totalySalaryForSecretarys = 0.0; 
+		double totalySalaryForTechnicians = 0.0; 
 		for (Employee employee : Employee.employeeList) {
-			employee.calculateTotalSalaryPerProfession(employee);
+			if (employee instanceof SalesPerson) {
+				totalSalaryForSales += employee.getSalary(); 
+			} else if (employee instanceof Secretary) {
+				totalySalaryForSecretarys += employee.getSalary(); 				
+			} else if (employee instanceof Technician) {
+				totalySalaryForTechnicians += employee.getSalary(); 				
+			}			
 		}
-		SalesPerson.calculateAverageSalaryPerProfession();
-		Secretary.calculateAverageSalaryPerProfession();
-		Technician.calculateAverageSalaryPerProfession(); 
+
+		// Print out the result to the console. 
+		Utility.echo("Average salary for Salesperson: " + Utility.divide(totalSalaryForSales, SalesPerson.nSales));
+		Utility.echo("Average salary for Secretary: " + Utility.divide(totalySalaryForSecretarys, Secretary.nSecretary));
+		Utility.echo("Average salary for Technician: " + Utility.divide(totalySalaryForTechnicians, Technician.nTechnician)); 
 	}
 	
 	// Polymorphism example. 

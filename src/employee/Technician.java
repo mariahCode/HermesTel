@@ -70,22 +70,23 @@ public class Technician extends Employee {
 
 	}
 	
-	@Override
-	public void calculateTotalSalaryPerProfession(Employee employee) {
-
-		averageSalaryForTechnician += employee.getSalary(); 
-		Utility.echo("" + employee.getSalary());
-	}	
-
+	// TODO MH Remove?	
 //	@Override
-	public static void calculateAverageSalaryPerProfession() {
+//	public void calculateTotalSalaryPerProfession(Employee employee) {
+//
+//		averageSalaryForTechnician += employee.getSalary(); 
+//		Utility.echo("" + employee.getSalary());
+//	}	
 
-		Utility.echo("" + averageSalaryForTechnician);
-		Utility.echo("" + nTechnician);
-
-		Utility.echo("averageSalaryForTechnician: " + Utility.divide(averageSalaryForTechnician, nTechnician));
-				
-	}	
-
+	// TODO MH Remove?	
+//	@Override
+//	public static void calculateAverageSalaryPerProfession() {
+//
+//		Utility.echo("" + averageSalaryForTechnician);
+//		Utility.echo("" + nTechnician);
+//
+//		Utility.echo("averageSalaryForTechnician: " + Utility.divide(averageSalaryForTechnician, nTechnician));
+//				
+//	}	
 
 }

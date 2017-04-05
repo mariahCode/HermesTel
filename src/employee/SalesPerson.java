@@ -66,7 +66,7 @@ public class SalesPerson extends Employee {
 		return 1000.00; 
 	}	
 	
-	@Override
+//	@Override
 	public void calculateTotalSalaryPerProfession(Employee employee) {
 
 		averageSalaryForSales += employee.getSalary(); 

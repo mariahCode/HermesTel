@@ -59,22 +59,20 @@ public class Secretary extends Employee {
 
 	}
 	
-	@Override
-	public void calculateTotalSalaryPerProfession(Employee employee) {
-
-		averageSalaryForSecretary += employee.getSalary(); 
-		Utility.echo("" + employee.getSalary());
-	}	
-
+	// TODO MH Remove?	
 //	@Override
-	public static void calculateAverageSalaryPerProfession() {
+//	public void calculateTotalSalaryPerProfession(Employee employee) {
+//
+//		averageSalaryForSecretary += employee.getSalary(); 
+//		Utility.echo("" + employee.getSalary());
+//	}	
 
-		Utility.echo("" + averageSalaryForSecretary);
-		Utility.echo("" + nSecretary);
-
-		Utility.echo("averageSalaryForSecretary: " + Utility.divide(averageSalaryForSecretary, nSecretary));
-				
-	}	
-
+	// TODO MH Remove?	
+//	@Override
+//	public static void calculateAverageSalaryPerProfession() {
+//		Utility.echo("" + averageSalaryForSecretary);
+//		Utility.echo("" + nSecretary);
+//		Utility.echo("averageSalaryForSecretary: " + Utility.divide(averageSalaryForSecretary, nSecretary));
+//	}	
 
 }
