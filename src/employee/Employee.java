@@ -12,7 +12,7 @@ abstract public class Employee {
 	private String lastName;
 	private String gender; // TODO enum
 	private String title; // TODO enum
-	private String profission; 
+	//private String profession; 
 	private static String typeOfEmployee ="" ;// TODO enum (REPresentative. HeadOfSection.
 								// HOOffice)
 	private int grade; // TODO enum (1, 2, 3)
@@ -20,6 +20,14 @@ abstract public class Employee {
 	private double salary = 50000.00;
 	private double bonus = 5000.00;
 	
+	@Override
+	public String toString() {
+		
+		return "     " + empID + "           " + firstName + "        " + lastName + "      " + gender
+				+ "      " + title + "     " + grade + "     " + salary
+				+ "     " + bonus;
+	}
+
 	// TODO should be private?
 	static public ArrayList<Employee> employeeList = new ArrayList<>();
 
@@ -219,11 +227,11 @@ abstract public class Employee {
 	// calculateBonus()
 
 	public String getDepartement() {
-		return profission;
+		return profession;
 	}
 
 	public void setDepartement(String departement) {
-		this.profission = departement;
+		this.profession = departement;
 	}
 
 }

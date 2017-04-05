@@ -6,7 +6,7 @@ import employee.Employee;
 
 public class Manager {
 
-	private ArrayList<Employee> employeeList;
+	public static ArrayList<Employee> employeeList;
 
 	
 	
