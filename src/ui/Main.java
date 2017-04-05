@@ -29,6 +29,7 @@ public class Main {
 		Secretary e4 = new Secretary("Mera", "Alxander", GenderType.FEMALE, "REP", GradeType.REP, 20000.00, 1000.00);
 		SalesPerson e5 = new SalesPerson("Mothana", "Aboush", GenderType.FEMALE, "HOD", GradeType.HOD, 20000.00, 10000.00);
 
+
 //		System.out.println(e1.getEmpID() + "/ " + e1.getFirstName() + e1.getLastName() + "/ " + e1.getGender() + " /"
 //				+ e1.getTitle() + e1.getGrade() + "/ " + e1.getSalary() + "/ " + e1.getBonus());
 //		System.out.println(e2.getEmpID() + " " + e2.getFirstName() + e2.getLastName() + " " + e2.getGender() + " "
@@ -50,6 +51,7 @@ public class Main {
 		 System.out.println();
 		 e5.updateEmployee(e5.getEmpID());
 		 System.out.println();
+
 //		 		 
 //		 System.out.println("----------------------");
 //		 System.out.println();
@@ -60,17 +62,14 @@ public class Main {
 //		Employee.removeEmployee(e1.getEmpID());
 //		System.out.println();
 
-//		Utility.echo(Statistics.averageSalary() + "");
-
-
 		// Polymorphism example. 
 //		Statistics.calculateBonusWithPolymorphism();
 
-
-		// TODO (MH) Improve this!
-		Statistics.calculateAverageSalaryPerProfession(); 
-				
-
+//		Statistics.averageSalaryOverall();
+//		Statistics.calculateAverageSalaryPerProfession(); 
+//		Statistics.calculateAverageSalaryPerProfession();
+		Statistics.averageGenderOverall(); 
+		
 	}
 
 }
