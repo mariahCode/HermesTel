@@ -1,7 +1,7 @@
 package ui;
 
 import employee.Employee;
-import employee.Sales;
+import employee.SalesPerson;
 import employee.Secretary;
 import employee.Technician;
 import utilities.Utility;
@@ -48,7 +48,7 @@ public class Statistics {
 		double totalySalaryForTechnicians = 0.0; 
 		
 		for (Employee employee : Employee.employeeList) {
-			if (employee instanceof Sales) {
+			if (employee instanceof SalesPerson) {
 				totalSalaryForSales += employee.getSalary(); 
 			} else if (employee instanceof Secretary) {
 				totalySalaryForSecretarys += employee.getSalary(); 				
@@ -58,7 +58,7 @@ public class Statistics {
 		}
 		
 		// Print out the result to the console. 
-		Utility.echo("Average salary for Salesperson: " + Utility.divide(totalSalaryForSales, Sales.nSales));
+		Utility.echo("Average salary for Salesperson: " + Utility.divide(totalSalaryForSales, SalesPerson.nSales));
 		Utility.echo("Average salary for Secretary: " + Utility.divide(totalySalaryForSecretarys, Secretary.nSecretary));
 		Utility.echo("Average salary for Technician: " + Utility.divide(totalySalaryForTechnicians, Technician.nTechnician)); 
 	}
