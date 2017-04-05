@@ -64,7 +64,10 @@ public class Main {
 //		Statistics.averageSalaryOverall();
 //		Statistics.calculateAverageSalaryPerProfession(); 
 //		Statistics.calculateAverageSalaryPerProfession();
-		Statistics.averageGenderOverall(); 
+//		Statistics.averageGenderOverall(); 
+//		Statistics.averageGenderPerProfession();
+//		Statistics.totalBonus(); 
+		Statistics.totalBonusPerProfession();
 		
 	}
 
