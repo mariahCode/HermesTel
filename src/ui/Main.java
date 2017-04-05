@@ -21,11 +21,11 @@ public class Main {
 		// grade,
 		// double salary, double bonus)
 		// TODO ask for the values.
-		Technician e1 = new Technician("Bardia", "Fathi", "Male", "HOD", 3, 30000.00, 1500.00);
-		Technician e2 = new Technician("Maria", "LastName", "Female", "HOS", 2, 25000.00, 1000.00);
-		Sales e3 = new Sales("Almothana", "Aboush", "Male", "HOD", 3, 10000.00, 10000.00);
-		Secretary e4 = new Secretary("Mera", "Alxander", "Female", "REP", 1, 20000.00, 1000.00);
-		Sales e5 = new Sales("Mothana", "Aboush", "Male", "HOD", 3, 20000.00, 10000.00);
+		Technician e1 = new Technician("Bardia", "Fathi", "UNKNOWN", "HOD", 3, 30000.00, 1500.00);
+		Technician e2 = new Technician("Maria", "LastName", "FEMALE", "HOS", 2, 25000.00, 1000.00);
+		Sales e3 = new Sales("Almothana", "Aboush", "MALE", "HOD", 3, 10000.00, 10000.00);
+		Secretary e4 = new Secretary("Mera", "Alxander", "FEMALE", "REP", 1, 20000.00, 1000.00);
+		Sales e5 = new Sales("Mothana", "Aboush", "MALE", "HOD", 3, 20000.00, 10000.00);
 
 //		System.out.println(e1.getEmpID() + "/ " + e1.getFirstName() + e1.getLastName() + "/ " + e1.getGender() + " /"
 //				+ e1.getTitle() + e1.getGrade() + "/ " + e1.getSalary() + "/ " + e1.getBonus());
@@ -54,16 +54,14 @@ public class Main {
 //				+ e2.getTitle() + e2.getGrade() + " " + e2.getSalary() + " " + e2.getBonus());
 
 
-//		Utility.echo(Statistics.averageSalary() + "");
-
-
 		// Polymorphism example. 
 //		Statistics.calculateBonusWithPolymorphism();
 
-		// TODO (MH) Improve this!
-		Statistics.calculateAverageSalaryPerProfession(); 
-				
-
+//		Statistics.averageSalaryOverall();
+//		Statistics.calculateAverageSalaryPerProfession(); 
+//		Statistics.calculateAverageSalaryPerProfession();
+//		Statistics.averageGenderOverall(); 
+		
 	}
 
 }
