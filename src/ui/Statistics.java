@@ -1,5 +1,7 @@
 package ui;
 
+import java.util.ArrayList;
+
 import employee.Employee;
 import employee.SalesPerson;
 import employee.Secretary;
@@ -32,10 +34,7 @@ public class Statistics {
 
 		double totalSalary = 0.00;
 
-		for (Employee employee : Employee.employeeList) {
-			Utility.echo("Testing: " + "totalSalary: " + totalSalary);
-			totalSalary += employee.getSalary();
-		}
+		totalSalary = calculateAverageSalary(Employee.employeeList);		
 
 		// Print out the result to the console.
 		Utility.echo("Average salary overall: " + Utility.divide(totalSalary, Employee.employeeList.size()));
@@ -44,26 +43,30 @@ public class Statistics {
 	// Get average salary per profession.
 	static public void calculateAverageSalaryPerProfession() {
 
-		double totalSalaryForSales = 0.0;
-		double totalySalaryForSecretarys = 0.0;
-		double totalySalaryForTechnicians = 0.0;
+		double totalSalary = 0.0;
 
-		for (Employee employee : Employee.employeeList) {
-			if (employee instanceof SalesPerson) {
-				totalSalaryForSales += employee.getSalary();
-			} else if (employee instanceof Secretary) {
-				totalySalaryForSecretarys += employee.getSalary();
-			} else if (employee instanceof Technician) {
-				totalySalaryForTechnicians += employee.getSalary();
-			}
+		totalSalary = calculateAverageSalary(SalesPerson.salesPersonList);		
+		Utility.echo("Average salary for Salesperson: " + Utility.divide(totalSalary, SalesPerson.salesPersonList.size()));
+
+		totalSalary = calculateAverageSalary(Secretary.secretaryList);
+		Utility.echo("Average salary for Secretary: " + Utility.divide(totalSalary, Secretary.secretaryList.size()));
+
+		totalSalary = calculateAverageSalary(Technician.technicianList);
+		Utility.echo("Average salary for Technician: " + Utility.divide(totalSalary, Technician.technicianList.size()));
+
+	}
+
+	static public double calculateAverageSalary(ArrayList<? extends Employee> arrayList) {
+		
+		double totalSalary = 0.0;
+
+		for (Employee employee : arrayList) {
+			totalSalary += employee.getSalary();
+			// Utility.echo("Testing: " + "totalSalary: " + totalSalary);
 		}
 
-		// Print out the result to the console.
-		Utility.echo("Average salary for Salesperson: " + Utility.divide(totalSalaryForSales, SalesPerson.nSales));
-		Utility.echo(
-				"Average salary for Secretary: " + Utility.divide(totalySalaryForSecretarys, Secretary.nSecretary));
-		Utility.echo(
-				"Average salary for Technician: " + Utility.divide(totalySalaryForTechnicians, Technician.nTechnician));
+		return totalSalary;
+		
 	}
 
 	// Get gender distribution in percentage for ALL employees.
@@ -93,13 +96,12 @@ public class Statistics {
 		percent = Utility.getPercentageDistribution(nMale, Employee.employeeList.size());
 		Utility.echo("Male in percent: " + percent);
 		percent = Utility.getPercentageDistribution(nFemale, Employee.employeeList.size());
-		Utility.echo("Male in percent: " + percent);
+		Utility.echo("Female in percent: " + percent);
 		percent = Utility.getPercentageDistribution(nUnknown, Employee.employeeList.size());
-		Utility.echo("Male in percent: " + percent);
+		Utility.echo("Unknown in percent: " + percent);
 
 	}
 
-	// TODO MH ADAPT TO ENUM GENDERTYPES.
 	// TODO MH Improve this version!
 	// Get gender distribution in percentage for ALL employees.
 	public static void averageGenderPerProfession() {
