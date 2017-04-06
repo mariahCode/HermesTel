@@ -61,9 +61,16 @@ abstract public class Employee {
 		return gender;
 	}
 
-	// we maked this enum
-	public void setGender(GenderType gender) {
-		this.gender = gender;
+	public void setGender(String gender) {
+		if (gender.equalsIgnoreCase("MALE")) {
+			this.gender = GenderType.MALE;
+		}
+		else if (gender.equalsIgnoreCase("FEMALE")) {
+			this.gender = GenderType.FEMALE;
+		}
+		else if (gender.equalsIgnoreCase("UNKNOWN")) {
+			this.gender = GenderType.UNKNOWN;
+		}	
 	}
 
 	public String getTitle() {
@@ -79,9 +86,17 @@ abstract public class Employee {
 		return grade;
 	}
 
-	// we maked this enum
-	public void setGrade(GradeType grade) {
-		this.grade = grade;
+	public void setGrade(String grade) {
+		
+		if (grade.equalsIgnoreCase("REP")) {
+			this.grade = GradeType.REP;
+		}
+		else if (grade.equalsIgnoreCase("HOS")) {
+			this.grade = GradeType.HOS;
+		}
+		else if (grade.equalsIgnoreCase("HOD")) {
+			this.grade = GradeType.HOD;
+		}	
 	}
 
 	public double getSalary() {
@@ -100,111 +115,175 @@ abstract public class Employee {
 		this.bonus = bonus;
 	}
 
+	public abstract void setBonus();
+
 	// Class variables.
 	private static int nEmployees = 1;
 
 	// Constructor. also // we maked this enum
-	public Employee(String shortTitle, String firstName, String lastName, GenderType gender, String title,
-			GradeType grade, double salary, double bonus) {
+		public Employee(String shortTitle, String firstName, String lastName, String gender, String title,
+				String grade, double salary) {
 
 		super();
 		this.empID = shortTitle + nEmployees++;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.gender = gender;
+		setGender(gender);
 		this.title = title;
-		this.grade = grade;
+		setGrade(grade);
 		this.salary = salary;
-		this.bonus = bonus;
+		this.setBonus();
 	}
 
 	// Methods.
-public void addEmployee(String firstName, String lastName, GenderType gender, String title, GradeType grade, double salary,
-		double bonus) {
 	
-		String employeeType = JOptionPane.showInputDialog("Enter the employee type (SalesPerson/Secretary/Technician)");
-		String firstName = JOptionPane.showInputDialog("Enter first name for the new employee");
-		GenderType gender = JOptionPane.showInputDialog("Enter new gender for the employee (MALE/FEMALE/UNKNOWN)");
-		String title = JOptionPane.showInputDialog("Enter title  for the new employee");
-		GradeType grade = JOptionPane.showInputDialog("Enter new grade for the employee (REP/HOS/HOD) ");
-		 double salary = JOptionPane.showInputDialog("Enter new Salary for the employee");
-		 double bonus = JOptionPane.showInputDialog(message);
-		if (employeeType.equals("SalesPerson")) {
-			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
-		}
-		if (employeeType.equals("Secretary")) {
-			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
-		}
-		if (employeeType.equals("Technician")) {
-			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
-		}
-}
+	
+//public void addEmployee(String firstName, String lastName, GenderType gender, String title, GradeType grade, double salary,
+//		double bonus) {
+//	
+//		String employeeType = JOptionPane.showInputDialog("Enter the employee type (SalesPerson/Secretary/Technician)");
+//		String firstName = JOptionPane.showInputDialog("Enter first name for the new employee");
+//		GenderType gender = JOptionPane.showInputDialog("Enter new gender for the employee (MALE/FEMALE/UNKNOWN)");
+//		String title = JOptionPane.showInputDialog("Enter title  for the new employee");
+//		GradeType grade = JOptionPane.showInputDialog("Enter new grade for the employee (REP/HOS/HOD) ");
+//		 double salary = JOptionPane.showInputDialog("Enter new Salary for the employee");
+//		 double bonus = JOptionPane.showInputDialog(message);
+//		if (employeeType.equals("SalesPerson")) {
+//			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
+//		}
+//		if (employeeType.equals("Secretary")) {
+//			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
+//		}
+//		if (employeeType.equals("Technician")) {
+//			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
+//		}
+//}
 
+	// TODO Fix: The empolyee is not removed from the child listArray.  
 	static public void removeEmployee(String empID) {
 
 		for (Employee employee : employeeList) {
 
 			if (employee.empID.equals(empID)) {
 
-				if (employee instanceof Technician) {
-					typeOfEmployee = "Technician";
-				} else if (employee instanceof SalesPerson) {
-
+				if (employee instanceof SalesPerson) {
 					typeOfEmployee = "Sales";
+					SalesPerson.salesPersonList.remove(empID);
 				} else if (employee instanceof Secretary) {
-
 					typeOfEmployee = "Secretary";
+					Secretary.secretaryList.remove(empID);
+				} else if (employee instanceof Technician) {
+					typeOfEmployee = "Technician";;
+					Technician.technicianList.remove(empID);
 				}
 				employeeList.remove(employee);
 
-				// TODO Info message: This employee was removed.
-				System.out.println("The Employee from " + Employee.typeOfEmployee + "/ " + employee.getEmpID() + "/ "
-						+ employee.getFirstName() + "/ " + employee.getLastName() + "/ "
-
-						+ employee.getGender() + "/ " + employee.getGrade() + "/ " + employee.getSalary() + "/ "
-						+ employee.getBonus() + "/ " + " Was removed ");
 				break;
 			}
 		}
 	}
 
 	@Override
+	// TODO Fix the employee type. Always empty. 
 	public String toString() {
-		return "Employee [empID=" + empID + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
-				+ ", title=" + title + ", profission=" + profission + ", grade=" + grade + ", salary=" + salary
-				+ ", bonus=" + bonus + "]";
+		 return ("The " + Employee.typeOfEmployee + "/ " + this.getEmpID() + "/ "
+		+ this.getFirstName() + "/ " + this.getLastName() + "/ "
+
+		+ this.getGender() + "/ " + this.getGrade() + "/ " + this.getSalary() + "/ "
+		+ this.getBonus());
 	}
 
-	public void updateEmployee(String empID) {
-		updateEmployee(getEmployeeByID(empID));
-		for (Employee employee : employeeList) {
-			if (employee.empID.equals(empID)) {
-				if (employee instanceof Technician) {
-					typeOfEmployee = "Technician";
-				} else if (employee instanceof SalesPerson) {
+//	public static Employee updateEmployee(String empID) {
+//		updateEmployee(getEmployeeByID(empID));
+//		for (Employee employee : employeeList) {
+//			if (employee.empID.equals(empID)) {
+//				if (employee instanceof Technician) {
+//					typeOfEmployee = "Technician";
+//				} else if (employee instanceof SalesPerson) {
+//
+//					typeOfEmployee = "Sales";
+//				} else if (employee instanceof Secretary) {
+//
+//					typeOfEmployee = "Secretary";
+//				}
+//
+////				System.out.println(employee);
+////				
+////				
+////				// TODO Info message: This employee was removed.
+////				System.out.println("The Employee" + "/ " + employee.getEmpID() + "/ " + employee.getFirstName() + "/ "
+////						+ employee.getLastName() + "/ " + employee.getGender() + "/ "+ employee.getTitle()+"/ "+ employee.getGrade() + "/ "
+////						+ employee.getSalary() + "/ " + employee.getBonus() + "/ " + " Was moved to" + " "
+////						+ Employee.typeOfEmployee);
+////				System.out.println("-----------------------------------------------------------------------------------------------");
+//				break;
+//			}
+//		}
+//	}
+//
+//	abstract public void updateEmployee();
 
-					typeOfEmployee = "Sales";
-				} else if (employee instanceof Secretary) {
+	// TODO Does this update the child lists also? 
+	// TODO Fix the gender, grade. And the employee type.
+	public void updateEmployee() {
+		
+		// Ask for the new values.
+		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + this.getEmpID() + "!" );
+		if (s == null)
+			System.exit(0);
+		this.setFirstName(s);
+//		System.out.println("The First name :");
+//		Utility.echo(s);
+//		System.out.println(":::::::::::::::::::::");
 
-					typeOfEmployee = "Secretary";
-				}
+		String s1 = JOptionPane.showInputDialog("Enter new last name for the employee " + this.getEmpID() + "!");
+		if (s1 == null)
+			System.exit(0);
+		this.setLastName(s1);
+//		System.out.println("The last name :");
+//		Utility.echo(s1);
+//		System.out.println(":::::::::::::::::::::");
+		
+		String s3 = JOptionPane.showInputDialog("Enter new gender for the employee (MALE/FEMALE/UNKNOWN) " + this.getEmpID() + "!");
+		if (s3 == null)
+			System.exit(0);	
+		
+//		System.out.println("The gender :");
+//		Utility.echo(s3);
+//		System.out.println(":::::::::::::::::::::");
+		
+		String s4 = JOptionPane.showInputDialog("Enter new title for the employee " + this.getEmpID() + "!");
+		if (s4 == null)
+			System.exit(0);
+		this.setTitle(s4);
+//		System.out.println("The title :");
+//		System.out.println(this.getTitle());
+//		System.out.println(":::::::::::::::::::::");
+		
+		String s5 = JOptionPane.showInputDialog("Enter new grade for the employee (REP/HOS/HOD) " + this.getEmpID() + "!");
+		if (s5 == null)
+			System.exit(0);
+		
+//		System.out.println("The grade :");
+//		Utility.echo(s5);
+//		System.out.println(":::::::::::::::::::::");
+		
+		String s6 = JOptionPane.showInputDialog("Enter new Salary for the employee " + this.getEmpID() + "!");
+		if (s6 == null)
+			System.exit(0);
+		this.setSalary(Double.parseDouble(s6));
+//		System.out.println("The Salary :");
+//		Utility.echo(s6);
+//		System.out.println(":::::::::::::::::::::");
+//		
+//		System.out.println("The bouns :");
+//		System.out.println(this.getBonus());
+//		System.out.println(":::::::::::::::::::::");
 
-				System.out.println(employee);
-				
-				
-				// TODO Info message: This employee was removed.
-				System.out.println("The Employee" + "/ " + employee.getEmpID() + "/ " + employee.getFirstName() + "/ "
-						+ employee.getLastName() + "/ " + employee.getGender() + "/ "+ employee.getTitle()+"/ "+ employee.getGrade() + "/ "
-						+ employee.getSalary() + "/ " + employee.getBonus() + "/ " + " Was moved to" + " "
-						+ Employee.typeOfEmployee);
-				System.out.println("-----------------------------------------------------------------------------------------------");
-				break;
-			}
-		}
 	}
 
-	abstract public void updateEmployee(Employee employee);
-
+	
+	
 	// maria test
 	abstract public String mariaTest(Employee employee);
 
@@ -236,7 +315,7 @@ public void addEmployee(String firstName, String lastName, GenderType gender, St
 	// employeeToUpdate.setFirstName(firstName);
 	// aso
 
-	public Employee getEmployeeByID(String empID) {
+	public static Employee getEmployeeByID(String empID) {
 
 		for (Employee employee : employeeList) {
 			if (employee.empID.equals(empID)) {
