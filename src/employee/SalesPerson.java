@@ -36,8 +36,10 @@ public class SalesPerson extends Employee {
 	// TODO Add specific method.
 	@Override
 	public void updateEmployee(Employee employee) {
+		
 
 		SalesPerson sales = (SalesPerson) employee;
+		
 
 		// Ask for the new values.
 		String s = JOptionPane.showInputDialog("Enter new first name for the employee " + sales.getEmpID() + "!" );

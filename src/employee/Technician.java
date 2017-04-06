@@ -11,6 +11,7 @@ import utilities.Utility;
 public class Technician extends Employee {
 
 	// Member variables.
+//	private String myTest; 
 
 	// Class variables.
 	static public double averageSalaryForTechnician; // Make private

@@ -2,9 +2,11 @@ package employee;
 
 import java.util.ArrayList;
 
-import utilities.GenderType;
-import utilities.GradeType;
-import utilities.Utility;
+import javax.swing.JOptionPane;
+
+import javafx.print.PrinterJob.JobStatus;
+import utilities.*;
+
 
 abstract public class Employee {
 
@@ -20,8 +22,8 @@ abstract public class Employee {
 	// HOOffice)
 	private GradeType grade; // TODO enum (1, 2, 3)
 
-	private double salary = 50000.00;
-	private double bonus = 5000.00;
+	private double salary ;
+	private double bonus;
 
 	// TODO should be private?
 	static public ArrayList<Employee> employeeList = new ArrayList<>();
@@ -116,6 +118,26 @@ abstract public class Employee {
 	}
 
 	// Methods.
+public void addEmployee(String firstName, String lastName, GenderType gender, String title, GradeType grade, double salary,
+		double bonus) {
+	
+		String employeeType = JOptionPane.showInputDialog("Enter the employee type (SalesPerson/Secretary/Technician)");
+		String firstName = JOptionPane.showInputDialog("Enter first name for the new employee");
+		GenderType gender = JOptionPane.showInputDialog("Enter new gender for the employee (MALE/FEMALE/UNKNOWN)");
+		String title = JOptionPane.showInputDialog("Enter title  for the new employee");
+		GradeType grade = JOptionPane.showInputDialog("Enter new grade for the employee (REP/HOS/HOD) ");
+		 double salary = JOptionPane.showInputDialog("Enter new Salary for the employee");
+		 double bonus = JOptionPane.showInputDialog(message);
+		if (employeeType.equals("SalesPerson")) {
+			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
+		}
+		if (employeeType.equals("Secretary")) {
+			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
+		}
+		if (employeeType.equals("Technician")) {
+			SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
+		}
+}
 
 	static public void removeEmployee(String empID) {
 
@@ -145,6 +167,13 @@ abstract public class Employee {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [empID=" + empID + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", title=" + title + ", profission=" + profission + ", grade=" + grade + ", salary=" + salary
+				+ ", bonus=" + bonus + "]";
+	}
+
 	public void updateEmployee(String empID) {
 		updateEmployee(getEmployeeByID(empID));
 		for (Employee employee : employeeList) {
@@ -159,13 +188,15 @@ abstract public class Employee {
 					typeOfEmployee = "Secretary";
 				}
 
+				System.out.println(employee);
+				
+				
 				// TODO Info message: This employee was removed.
 				System.out.println("The Employee" + "/ " + employee.getEmpID() + "/ " + employee.getFirstName() + "/ "
 						+ employee.getLastName() + "/ " + employee.getGender() + "/ "+ employee.getTitle()+"/ "+ employee.getGrade() + "/ "
 						+ employee.getSalary() + "/ " + employee.getBonus() + "/ " + " Was moved to" + " "
 						+ Employee.typeOfEmployee);
-				System.out.println(
-						"-----------------------------------------------------------------------------------------------");
+				System.out.println("-----------------------------------------------------------------------------------------------");
 				break;
 			}
 		}
