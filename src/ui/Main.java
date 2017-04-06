@@ -12,21 +12,23 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// TODO Remove before release. 
-		// Testing: Add some employees. 
-//		Technician e1 = new Technician("Bardia", "Fathi", GenderType.MALE, "HOD",GradeType.HOD, 30000.00, 1500.00);
-//		Technician e2 = new Technician("Maria", "LastName", GenderType.UNKNOWN, "HOS", GradeType.HOS, 25000.00, 1000.00);
-//		SalesPerson e3 = new SalesPerson("Almothana", "Aboush", GenderType.MALE, "HOD", GradeType.HOD, 10000.00, 10000.00);
-//		Secretary e4 = new Secretary("Mera", "Alxander", GenderType.FEMALE, "REP", GradeType.REP, 20000.00, 1000.00);
-//		SalesPerson e5 = new SalesPerson("Mothana", "Aboush", GenderType.FEMALE, "HOD", GradeType.HOD, 20000.00, 10000.00);
-
-		Technician e1 = new Technician("Bardia", "Fathi", "Male", "My title","HOD", 30000.00);
-
+		prefillAnEmployeeDB();
+		
 		// Display menues. 
 		Menues.printMainMenu();
 				
 	}
 
+	// Testing: Add some employees. As if we already have some employees in our db.  
+	public static void prefillAnEmployeeDB() {
+		SalesPerson e1 = new SalesPerson("Mothana", "Aboush", "female", "Title 1", "HOD", 10000.00);
+		SalesPerson e2 = new SalesPerson("Almothana", "Aboush", "male", "Title 2", "REP", 20000.00);
+		Secretary e3 = new Secretary("Sven", "Svensson",  "male", "Title 3", "REP", 30000.00);;
+		Secretary e4 = new Secretary("Mera", "Alxander", "female", "Title 4", "HOS", 40000.00);
+		Technician e5 = new Technician("Bardia", "Fathi", "male", "Title 5","HOD", 30000.00);
+		Technician e6 = new Technician("Maria", "Hansson", "unknown", "Title 6", "HOS", 40000.00);
+	}
+	
 }
 
 
